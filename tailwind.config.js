@@ -9,6 +9,9 @@ module.exports = {
     minWidth: {
       con: "1200px",
     },
+    letterSpacing: {
+      heroWide: ".7rem",
+    },
     extend: {
       backgroundImage: (theme) => ({
         hero: "url('/src/assets/hero_image_01.jpg')",

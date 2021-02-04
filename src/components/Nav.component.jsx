@@ -9,7 +9,7 @@ const Nav = () => {
         <img src={Logo} className=" w-20" alt="Logo" />
 
         <div>
-          <ui className="flex items-center list-none	text-center ">
+          <ui className="flex items-center list-none	text-center text-gray-800">
             <li className="h-full p-3">Pocetna</li>
             <li className="h-full p-3">Emisije</li>
             <li className="h-full p-3">Marketing</li>
