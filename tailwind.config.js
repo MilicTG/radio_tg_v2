@@ -19,7 +19,9 @@ module.exports = {
       backgroundImage: (theme) => ({
         hero: "url('/src/assets/hero_image_01.jpg')",
         svg: "url('/src/assets/svg_bck.svg')",
-        about: "url('/src/assets/about_us_bck.jpg')",
+        about: "url('/src/assets/bck_about.jpg')",
+        gradient:
+          "radial-gradient(circle, rgba(0,0,0,0) 43%, rgba(47,47,47,1) 100%)",
       }),
     },
   },
