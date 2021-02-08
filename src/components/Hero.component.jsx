@@ -4,7 +4,7 @@ import BtnPlay from "./BtnPlay.component";
 const Hero = () => {
   return (
     <header className="h-screen">
-      <div className="h-screen bg-hero bg-cover bg-no-repeat bg-center flex justify-center items-center">
+      <div className="h-screen bg-hero bg-fixed bg-cover bg-no-repeat bg-center flex justify-center items-center">
         <div className="min-w-con flex h-full flex-col justify-center items-start">
           <div className="my-28">
             <h1 className="text-8xl text-white">Radio Tomislavgrad</h1>

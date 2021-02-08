@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <div className="w-full pt-16 pb-16 flex justify-center">
       <div className="max-w-con h-full flex items-center justify-between">
-        <div className="w-2/5 p-10">
+        <div className="w-2/6 py-10">
           <h2 className="text-3xl mb-1 text-gray-900">O nama</h2>
           <div className="w-28 h-1 mb-8 rounded bg-blue-700" />
           <p className="mb-5 text-gray-900">
