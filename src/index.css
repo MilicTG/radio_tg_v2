@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .pattern-bck {
-  background-color: #ffffff;
-  opacity: 0.4;
-  background-image: radial-gradient(#009dff 1px, transparent 1px),
+    background-color: #ffffff;
+    opacity: 0.4;
+    background-image: radial-gradient(#009dff 1px, transparent 1px),
     radial-gradient(#009dff 1px, #ffffff 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
 }
