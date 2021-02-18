@@ -7,12 +7,12 @@ import Nav from "./components/Nav.component";
 import Main from "./pages/Main.page.jsx";
 
 function App() {
-  return (
-    <>
-      <Nav />
-      <Main />
-    </>
-  );
+    return (
+        <>
+            <Nav/>
+            <Main/>
+        </>
+    );
 }
 
 export default App;
