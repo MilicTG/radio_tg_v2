@@ -10,7 +10,8 @@ const Shows = () => {
                     Naše najslušanije emisije
                 </h2>
                 <div className="w-28 h-1 mt-2 mb-2 rounded bg-blue-700"/>
-                <div className="w-full py-12 grid grid-cols-4 grid-rows-2 gap-10">
+                <div className="w-full py-12 grid grid-cols-3 gap-10">
+                    <ShowCard/>
                     <ShowCard/>
                     <ShowCard/>
                     <ShowCard/>
