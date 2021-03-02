@@ -17,7 +17,7 @@ module.exports = {
         },
         extend: {
             backgroundImage: (theme) => ({
-                hero: "url('/src/assets/hero_image_01.jpg')",
+                hero: "url('/src/assets/img_hero.jpg')",
                 svg: "url('/src/assets/svg_bck.svg')",
                 about: "url('/src/assets/bck_about.jpg')",
                 breakOne: "url('/src/assets/bck_microphone.jpg')",

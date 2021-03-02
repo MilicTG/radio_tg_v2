@@ -4,7 +4,7 @@ import Logo from "../assets/logo_rtg_main.svg";
 
 const Nav = () => {
     return (
-        <nav className="w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-10 shadow-md frosted">
+        <nav className="w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-20 shadow-md frosted">
             <div className="min-w-con flex items-center justify-between	">
                 <img src={Logo} className=" w-20" alt="Logo"/>
 

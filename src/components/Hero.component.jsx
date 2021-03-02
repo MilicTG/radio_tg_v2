@@ -1,20 +1,26 @@
 import React from "react";
+import {motion} from 'framer-motion'
 import BtnPlay from "./BtnPlay.component";
 
 const Hero = () => {
     return (
         <header className="h-screen">
             <div className="h-screen bg-hero bg-fixed bg-cover bg-no-repeat bg-center flex justify-center items-center">
-                <div className="min-w-con flex h-full flex-col justify-center items-start">
-                    <div className="my-28">
-                        <h1 className="text-8xl text-white m-0">Radio Tomislavgrad</h1>
+                {/*<div className="absolute inset-0 bg-gradient-to-b from-blue-500"/>*/}
+                <div className="min-w-con flex h-full flex-col justify-center items-center">
+                    <div className="my-28 z-10 flex justify-center flex-col items-center">
+                        <motion.h1 initial={{opacity: 0, scale: 0.5}} animate={{opacity: 1, scale: 1}}
+                                   transition={{
+                                       duration: 0.9
+                                   }}
+                                   className="text-8xl text-white m-0 tracking-heroWide">Radio Tomislavgrad
+                        </motion.h1>
                         <h3 className="text-3xl text-white font-thin my-3 tracking-heroWide">
                             95.1,95.9 i 103.3Mhz
                         </h3>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center z-10">
                         <BtnPlay/>
-                        <h3 className="text-xl text-white mx-8">Slusajte RTG uzivo</h3>
                     </div>
                 </div>
             </div>
