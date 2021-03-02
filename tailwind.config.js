@@ -29,5 +29,5 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [require("@mjwebs/tailwindcss-frosted")],
+    plugins: [],
 };
