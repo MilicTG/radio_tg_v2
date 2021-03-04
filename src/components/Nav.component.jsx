@@ -35,7 +35,7 @@ const Nav = () => {
             <div className="min-w-con flex items-center justify-between	">
                 <img src={
                     navbarBg ? Logo : LogoWhite
-                } className=" w-20 z-30" alt="Logo"/>
+                } className="cursor-pointer w-20 z-30" alt="Logo"/>
 
                 <div className="z-30">
                     <ui className={
@@ -43,11 +43,15 @@ const Nav = () => {
                             'flex items-center list-none transition duration-500 ease-in-out text-center text-gray-800' :
                             'flex items-center list-none transition duration-500 ease-in-out text-center text-white'
                     }>
-                        <li className="h-full p-3">Pocetna</li>
-                        <li className="h-full p-3">Emisije</li>
-                        <li className="h-full p-3">Marketing</li>
-                        <li className="h-full p-3">Kontakt</li>
-                        <li className="h-full p-3">RTG Music</li>
+                        <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Emisije</li>
+                        <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Marketing</li>
+                        <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Kontakt</li>
+                        <li className="h-full p-3">
+                        <span
+                            className="bg-blue-400 p-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
+                            RTG Music
+                        </span>
+                        </li>
                     </ui>
                 </div>
             </div>

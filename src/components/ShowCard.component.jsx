@@ -11,13 +11,17 @@ const ShowCard = props => {
                     type: "ease",
                     duration: 0.1
                 }}
-                whileHover={{scale: 1.005}}
+                whileHover={{scale: 1.010}}
                 whileTap={{scale: 0.95}}
-                className="w-96 h-44 rounded-xl shadow-xl relative overflow-hidden border-0 cursor-pointer">
-                <img className="w-full h-full object-cover content-center" src={zrcaloBck} alt="Image"/>
+                className="bg-gray-100 p-0 rounded-xl shadow-2xl overflow-hidden border-0 cursor-pointer">
+                <img className="w-full h-40 object-cover content-center" src={zrcaloBck} alt="Show image"/>
                 <div
-                    className="bottom-0 left-0  w-full bg-white opacity-80 overflow-hidden absolute">
-                    <h5 className="text-lg text-gray-800 p-3">Strunica, sarenica, tkanica</h5>
+                    className="    ">
+                    <h5 className="text-xl text-gray-800 p-4 font-bold">Strunica, šarenica, tkanica</h5>
+                    <p className="p-4">Središnja emisija u kojoj obrađujemo aktualne teme i događaje, kako u našoj
+                        sredini, tako i
+                        šire.</p>
+                    <p className="font-medium bg-gradient-to-r from-blue-800 to-blue-400 text-white p-4 text-sm">Od utorka do petka u 11:00 sati</p>
                 </div>
             </motion.figure>
         </AnimatePresence>

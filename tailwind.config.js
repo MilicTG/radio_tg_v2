@@ -21,8 +21,10 @@ module.exports = {
                 svg: "url('/src/assets/svg_bck.svg')",
                 about: "url('/src/assets/bck_about.jpg')",
                 breakOne: "url('/src/assets/bck_microphone.jpg')",
+                breakTwo: "url('/src/assets/bck_open_field.jpg')",
                 gradient:
                     "radial-gradient(circle, rgba(0,0,0,0) 43%, rgba(47,47,47,1) 100%)",
+
             }),
         },
     },
