@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {motion} from 'framer-motion'
 
 import Logo from "../assets/logo_rtg_main.svg";
 import LogoWhite from "../assets/logo_rtg_main_white.svg"
@@ -19,11 +20,18 @@ const Nav = () => {
     window.addEventListener('scroll', changeNavbarBackground)
 
     return (
-        <nav className={
+        <motion.nav className={
             navbarBg ?
                 'w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-20 transition duration-500 ease-in-out bg-white shadow-md' :
                 'w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-20 transition duration-500 ease-in-out'
-        }>
+        }
+                    initial={{y: -90}}
+                    animate={{y: 0}}
+                    transition={{
+                        type: "spring",
+                        duration: 0.9
+                    }}
+        >
             <div className="min-w-con flex items-center justify-between	">
                 <img src={
                     navbarBg ? Logo : LogoWhite
@@ -43,7 +51,7 @@ const Nav = () => {
                     </ui>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 
