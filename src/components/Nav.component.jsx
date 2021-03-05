@@ -46,6 +46,7 @@ const Nav = () => {
                         <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Emisije</li>
                         <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Marketing</li>
                         <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Kontakt</li>
+                        <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">Aplikacija</li>
                         <li className="h-full p-3">
                         <span
                             className="bg-blue-400 p-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
