@@ -18,8 +18,8 @@ const Main = () => {
             <BreakSectionOne/>
             <Shows/>
             <RTGMusic/>
-            <BreakSectionTwo/>
             <MarketingSection/>
+            <BreakSectionTwo/>
             <ContactSection/>
             <Footer/>
         </>
