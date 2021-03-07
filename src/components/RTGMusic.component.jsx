@@ -1,5 +1,4 @@
 import React from 'react'
-import BtnPlay from "./BtnPlay.component";
 
 const RTGMusic = () => {
     return (

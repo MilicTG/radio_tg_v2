@@ -20,7 +20,7 @@ module.exports = {
                 hero: "url('/src/assets/img_hero.jpg')",
                 rtgMusicBg: "url('/src/assets/img_rtg_music.jpg')",
                 svg: "url('/src/assets/svg_bck.svg')",
-                about: "url('/src/assets/bck_about.jpg')",
+                about: "url('/src/assets/img_about.jpg')",
                 breakOne: "url('/src/assets/bck_microphone.jpg')",
                 breakTwo: "url('/src/assets/bck_open_field.jpg')",
                 gradient:
