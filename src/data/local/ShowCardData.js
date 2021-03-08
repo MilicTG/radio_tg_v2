@@ -2,7 +2,7 @@ export const showCardData = [
     {
         showId: "00",
         showTitle: "Dnevno zrcalo",
-        imageUrl: "../../assets/zrcaloShow.jpg",
+        imageUrl: "../../assets/img_zrcalo.jpg",
         showDescription: "Središnja emisija u kojoj obrađujemo aktualne teme i događaje, kako u našoj sredini, tako i šire.",
         showAirTime: "Od utorka do petka u 11:00"
     },

@@ -21,27 +21,18 @@ const Main = () => {
         <>
             <Hero/>
             <InfoSection
-                title={aboutUsData.title}
-                textOne={aboutUsData.textOne}
-                textTwo={aboutUsData.textTwo}
-                textThree={aboutUsData.textThree}
+                {...aboutUsData}
                 image={imageAbout}
                 order={true}/>
             <BreakSectionOne/>
             <Shows/>
             <RTGMusic/>
             <InfoSection
-                title={marketYourBusinessData.title}
-                textOne={marketYourBusinessData.textOne}
-                textTwo={marketYourBusinessData.textTwo}
-                textThree={marketYourBusinessData.textThree}
+                {...marketYourBusinessData}
                 image={imageBusiness}
                 order={true}/>
             <InfoSection
-                title={weddingAndOtherData.title}
-                textOne={weddingAndOtherData.textOne}
-                textTwo={weddingAndOtherData.textTwo}
-                textThree={weddingAndOtherData.textThree}
+                {...weddingAndOtherData}
                 image={imageWedding}
                 order={false}/>
             <ContactSection/>
