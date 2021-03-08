@@ -18,3 +18,10 @@ export const weddingAndOtherData = {
     textTwo: "Vjenčanja, godišnjice braka, rođendani, imendani, prigoda su da na neki način iznenadimo i razveselimo drage ljude. A najbolji način za to je uputiti im čestitku s najljepšim željama i prigodnim pjesmama putem valova Radija Tomislavgrad.",
     textThree: "Učinite to, nazovite nas, a ostalo je naša briga."
 }
+
+export const androidAppData = {
+    title: "Android aplikacija",
+    textOne: "Nam et porta enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget est commodo, mollis massa eget, dignissim est. Suspendisse eu sapien id metus pulvinar porttitor.",
+    textTwo: "Nam imperdiet magna placerat elit malesuada, eget luctus velit ullamcorper. Aliquam laoreet enim at dapibus porta. Donec accumsan dui nec odio sodales, eu fringilla urna tristique. Ut feugiat sapien eu imperdiet lobortis. In pharetra ac turpis eget interdum.",
+    textThree: " Aliquam eget rutrum sem. Integer finibus aliquet tortor, posuere lobortis leo tincidunt sit amet. Morbi dignissim est justo, quis sagittis magna sollicitudin id. Proin rhoncus mollis lorem, id eleifend libero placerat ac. Sed porta ipsum in fringilla convallis."
+}

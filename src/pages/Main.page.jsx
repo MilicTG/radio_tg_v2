@@ -11,10 +11,11 @@ import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 
 //local data
-import {aboutUsData, marketYourBusinessData, weddingAndOtherData} from "../data/local/InfoSectionData";
+import {aboutUsData, marketYourBusinessData, weddingAndOtherData, androidAppData} from "../data/local/InfoSectionData";
 import imageAbout from '../assets/img_about.jpg'
 import imageBusiness from '../assets/img_business.jpg'
 import imageWedding from '../assets/img_wedding.jpg'
+import imageAndroid from '../assets/img_smartphone.jpg'
 
 const Main = () => {
     return (
@@ -31,13 +32,16 @@ const Main = () => {
                 {...marketYourBusinessData}
                 image={imageBusiness}
                 order={true}/>
+            <BreakSectionTwo/>
             <InfoSection
                 {...weddingAndOtherData}
                 image={imageWedding}
                 order={false}/>
             <ContactSection/>
-            <BreakSectionTwo/>
-            <AndroidApp/>
+            <InfoSection
+                {...androidAppData}
+                image={imageAndroid}
+                order={true}/>
             <Footer/>
         </>
     );

@@ -6,7 +6,7 @@ const InfoSection = (props) => {
 
     return (
         <div className="w-full pt-16 pb-16 flex justify-center">
-            <div className="max-w-con h-full flex items-center justify-between">
+            <div className="max-w-con h-full flex items-center justify-around">
                 <div className={
                     props.order ? 'w-2/6 py-10' : 'w-2/6 py-10 order-2'
                 }>

@@ -19,6 +19,7 @@ module.exports = {
             backgroundImage: (theme) => ({
                 hero: "url('/src/assets/img_hero.jpg')",
                 rtgMusicBg: "url('/src/assets/img_rtg_music.jpg')",
+                locationBg: "url('/src/assets/img_location.jpg')",
                 svg: "url('/src/assets/svg_bck.svg')",
                 about: "url('/src/assets/img_about.jpg')",
                 breakOne: "url('/src/assets/bck_microphone.jpg')",
