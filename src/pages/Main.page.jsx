@@ -32,16 +32,13 @@ const Main = () => {
                 {...marketYourBusinessData}
                 image={imageBusiness}
                 order={true}/>
-            <BreakSectionTwo/>
             <InfoSection
                 {...weddingAndOtherData}
                 image={imageWedding}
                 order={false}/>
+            <BreakSectionTwo/>
             <ContactSection/>
-            <InfoSection
-                {...androidAppData}
-                image={imageAndroid}
-                order={true}/>
+            <AndroidApp/>
             <Footer/>
         </>
     );
