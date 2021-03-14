@@ -15,31 +15,30 @@ import {aboutUsData, marketYourBusinessData, weddingAndOtherData, androidAppData
 import imageAbout from '../assets/img_about.jpg'
 import imageBusiness from '../assets/img_business.jpg'
 import imageWedding from '../assets/img_wedding.jpg'
-import imageAndroid from '../assets/img_smartphone.jpg'
 
 const Main = () => {
     return (
         <>
             <Hero/>
-            <InfoSection
-                {...aboutUsData}
-                image={imageAbout}
-                order={true}/>
-            <BreakSectionOne/>
-            <Shows/>
-            <RTGMusic/>
-            <InfoSection
-                {...marketYourBusinessData}
-                image={imageBusiness}
-                order={true}/>
-            <InfoSection
-                {...weddingAndOtherData}
-                image={imageWedding}
-                order={false}/>
-            <BreakSectionTwo/>
-            <ContactSection/>
-            <AndroidApp/>
-            <Footer/>
+            {/*<InfoSection*/}
+            {/*    {...aboutUsData}*/}
+            {/*    image={imageAbout}*/}
+            {/*    order={true}/>*/}
+            {/*<BreakSectionOne/>*/}
+            {/*<Shows/>*/}
+            {/*<RTGMusic/>*/}
+            {/*<InfoSection*/}
+            {/*    {...marketYourBusinessData}*/}
+            {/*    image={imageBusiness}*/}
+            {/*    order={true}/>*/}
+            {/*<InfoSection*/}
+            {/*    {...weddingAndOtherData}*/}
+            {/*    image={imageWedding}*/}
+            {/*    order={false}/>*/}
+            {/*<BreakSectionTwo/>*/}
+            {/*<ContactSection/>*/}
+            {/*<AndroidApp/>*/}
+            {/*<Footer/>*/}
         </>
     );
 };
