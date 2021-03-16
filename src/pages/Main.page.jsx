@@ -19,7 +19,8 @@ import imageWedding from '../assets/img_wedding.jpg'
 const Main = () => {
     return (
         <>
-            <Hero/>
+            <div className="w-full h-screen bg-gray-700"/>
+            {/*<Hero/>*/}
             {/*<InfoSection*/}
             {/*    {...aboutUsData}*/}
             {/*    image={imageAbout}*/}

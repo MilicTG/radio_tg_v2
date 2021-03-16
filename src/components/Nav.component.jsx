@@ -25,8 +25,8 @@ const Nav = () => {
     return (
         <motion.nav className={
             navbarBg ?
-                'relative w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-20 transition duration-500 ease-in-out bg-white shadow-md' :
-                'relative w-full h-20 -mt-20 flex justify-center top-0 left-0 sticky z-20 transition duration-500 ease-in-out'
+                'relative w-full h-20 -mt-20 flex justify-center flex-col top-0 left-0 sticky z-20 transition duration-500 ease-in-out bg-white shadow-md ' :
+                'relative w-full h-20 -mt-20 flex justify-center flex-col top-0 left-0 sticky z-20 transition duration-500 ease-in-out'
         }
                     initial={{y: -90}}
                     animate={{y: 0}}
