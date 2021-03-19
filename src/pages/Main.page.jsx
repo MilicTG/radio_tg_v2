@@ -26,21 +26,23 @@ const Main = () => {
     <>
       <Hero />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
-      {/*<BreakSectionOne/>
-      {/*<Shows/>*/}
-      {/*<RTGMusic/>*/}
-      {/*<InfoSection*/}
-      {/*    {...marketYourBusinessData}*/}
-      {/*    image={imageBusiness}*/}
-      {/*    order={true}/>*/}
-      {/*<InfoSection*/}
-      {/*    {...weddingAndOtherData}*/}
-      {/*    image={imageWedding}*/}
-      {/*    order={false}/>*/}
-      {/*<BreakSectionTwo/>*/}
-      {/*<ContactSection/>*/}
-      {/*<AndroidApp/>*/}
-      {/*<Footer/>*/}
+      <BreakSectionOne />
+      <Shows />
+      <RTGMusic />
+      <InfoSection
+        {...marketYourBusinessData}
+        image={imageBusiness}
+        order={true}
+      />
+      <InfoSection
+        {...weddingAndOtherData}
+        image={imageWedding}
+        order={false}
+      />
+      <BreakSectionTwo />
+      <ContactSection />
+      <AndroidApp />
+      <Footer />
     </>
   );
 };
