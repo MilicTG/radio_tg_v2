@@ -2,7 +2,10 @@ import React from "react";
 
 const RTGMusic = () => {
   return (
-    <section className="h-auto w-full px-4 xl:px-0 flex justify-center bg-rtgMusicBg bg-fixed bg-center bg-cover">
+    <section
+      id="rtg_music"
+      className="h-auto w-full px-4 xl:px-0 flex justify-center bg-rtgMusicBg bg-fixed bg-center bg-cover"
+    >
       <div className="max-w-con w-full flex justify-start items-center z-10">
         <div className="py-20 w-full lg:w-5/6 xl:w-5/12">
           <h3 className="text-3xl text-blue-400 mb-1">RTG Music</h3>

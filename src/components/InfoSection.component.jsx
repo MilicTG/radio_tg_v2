@@ -5,7 +5,10 @@ import SectionTitle from "./SectionTitle.component";
 
 const InfoSection = (props) => {
   return (
-    <div className="w-full pt-12 pb-12 lg:pt-16 lg:pb-16 flex justify-center">
+    <div
+      id={props.id}
+      className="w-full pt-12 pb-12 lg:pt-16 lg:pb-16 flex justify-center"
+    >
       <motion.div
         initial={{ x: -100 }}
         animate={{ x: 0 }}

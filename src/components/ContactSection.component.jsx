@@ -7,7 +7,10 @@ import { FaPhoneAlt, FaFax, FiMail, ImLocation2 } from "react-icons/all";
 
 const ContactSection = () => {
   return (
-    <section className="h-auto w-full flex justify-center px-4 xl:px-0">
+    <section
+      id="contact"
+      className="h-auto w-full flex justify-center px-4 xl:px-0"
+    >
       <div className="max-w-con w-full flex justify-start flex-col md:flex-row items-center z-10 py-20 xl:py-32">
         <div className=" w-full">
           <SectionTitle title="Kontaktirajte nas" />

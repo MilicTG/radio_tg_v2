@@ -15,7 +15,6 @@ import {
   aboutUsData,
   marketYourBusinessData,
   weddingAndOtherData,
-  androidAppData,
 } from "../data/local/InfoSectionData";
 import imageAbout from "../assets/img_about.jpg";
 import imageBusiness from "../assets/img_business.jpg";
@@ -30,6 +29,7 @@ const Main = () => {
       <Shows />
       <RTGMusic />
       <InfoSection
+        id="marketing"
         {...marketYourBusinessData}
         image={imageBusiness}
         order={true}

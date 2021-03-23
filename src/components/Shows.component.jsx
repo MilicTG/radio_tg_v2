@@ -16,7 +16,10 @@ import ostaloImg from "../assets/img_ostalo.jpg";
 
 const Shows = () => {
   return (
-    <section className="w-full flex justify-center px-4 xl:px-0 mt-20 mb-16">
+    <section
+      id="shows"
+      className="w-full flex justify-center px-4 xl:px-0 mt-20 mb-16"
+    >
       <div className="w-full max-w-con h-full flex items-start flex-col justify-center">
         <SectionTitle title="Naše najslušanije emisije" />
         <div className="w-full pt-2 pb-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-11 xl:grid-cols-3 xl:gap-12">

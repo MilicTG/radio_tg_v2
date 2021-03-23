@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavMenu from "./NavMenu.component";
 import { motion } from "framer-motion";
 import { Divide as Hamburger } from "hamburger-react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import Logo from "../assets/logo_rtg_main.svg";
 import LogoWhite from "../assets/logo_rtg_main_white.svg";
 
@@ -18,6 +19,10 @@ const Nav = () => {
   };
 
   window.addEventListener("scroll", changeNavbarBackground);
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <motion.nav
@@ -38,6 +43,7 @@ const Nav = () => {
           src={navbarBg || isHidden ? Logo : LogoWhite}
           className="cursor-pointer w-20 z-30"
           alt="Logo"
+          onClick={toggleHome}
         />
 
         <div className="z-30 hidden lg:block">
@@ -49,21 +55,61 @@ const Nav = () => {
             }
           >
             <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">
-              Emisije
+              <Link
+                activeClass="active"
+                to="shows"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                Emisije
+              </Link>
             </li>
             <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">
-              Marketing
+              <Link
+                activeClass="active"
+                to="marketing"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                Marketing
+              </Link>
             </li>
             <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">
-              Kontakt
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                Kontakt
+              </Link>
             </li>
             <li className="cursor-pointer h-full px-3 hover:text-blue-400 transition-all">
-              Aplikacija
+              <Link
+                activeClass="active"
+                to="app"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                Aplikacija
+              </Link>
             </li>
             <li className="h-full p-3">
-              <span className="bg-blue-400 p-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
-                RTG Music
-              </span>
+              <Link
+                activeClass="active"
+                to="rtg_music"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                <span className="bg-blue-400 p-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
+                  RTG Music
+                </span>
+              </Link>
             </li>
           </ui>
         </div>
