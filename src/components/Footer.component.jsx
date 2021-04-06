@@ -52,7 +52,7 @@ const Footer = () => {
               Sva prava pridrzana Radio Tomislavgrad
             </p>
             <p className="text-xs text-blue-50">
-              Designed and developed by milic.dev
+              Designed and developed by Ivan Milic
             </p>
           </div>
         </div>

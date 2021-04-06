@@ -28,8 +28,8 @@ const Nav = () => {
     <motion.nav
       className={
         navbarBg || isHidden
-          ? "fixed sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear bg-white shadow-md "
-          : "fixed sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear"
+          ? "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear bg-white shadow-md "
+          : "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear"
       }
       initial={{ y: -90 }}
       animate={{ y: 0 }}
@@ -116,6 +116,7 @@ const Nav = () => {
         <div className="lg:hidden p-0.5 bg-white rounded-full">
           <Hamburger
             rounded
+            size={20}
             easing="ease-in"
             color="#1F2937"
             toggled={isHidden}
