@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimatePresence } from "framer-motion";
 
 //components
 import Nav from "./components/Nav.component";
@@ -10,7 +11,9 @@ function App() {
   return (
     <>
       <Nav />
-      <Main />
+      <AnimatePresence exitBeforeEnter>
+        <Main />
+      </AnimatePresence>
     </>
   );
 }
