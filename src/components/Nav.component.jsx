@@ -6,6 +6,8 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import Logo from "../assets/logo_rtg_main.svg";
 import LogoWhite from "../assets/logo_rtg_main_white.svg";
 
+import { revealFromTopAnimation } from "../animations/animations";
+
 const Nav = () => {
   const [navbarBg, setNavbarBg] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -31,12 +33,9 @@ const Nav = () => {
           ? "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear bg-white shadow-md "
           : "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear"
       }
-      initial={{ y: -90 }}
-      animate={{ y: 0 }}
-      transition={{
-        type: "spring",
-        duration: 0.9,
-      }}
+      variants={revealFromTopAnimation}
+      initial="hidden"
+      animate="show"
     >
       <div className="px-4 w-full xl:max-w-con xl:px-0 flex items-center justify-between	">
         <img

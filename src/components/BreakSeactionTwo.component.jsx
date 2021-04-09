@@ -1,10 +1,21 @@
 import React from "react";
 import { FaCity, GoRadioTower, SiAudiomack } from "react-icons/all";
+import { motion } from "framer-motion";
+import { useScroll } from "../helpers/useScroll";
+import { revelTextScaleAnimation } from "../animations/animations";
 
 const BreakSectionTwo = () => {
+  const [element, controls] = useScroll();
+
   return (
     <section className="w-full flex justify-center h-auto bg-breakTwo bg-fixed bg-center bg-cover">
-      <div className="max-w-con w-full flex flex-col md:flex-row py-4 lg:py-8 justify-evenly items-center z-10">
+      <motion.div
+        variants={revelTextScaleAnimation}
+        initial="hidden"
+        animate={controls}
+        ref={element}
+        className="max-w-con w-full flex flex-col md:flex-row py-4 lg:py-8 justify-evenly items-center z-10"
+      >
         <div className="p-4 h-56 w-72 text-white flex-col rounded-xl flex justify-center items-center">
           <FaCity size="4rem" className="text-white" />
           <h5 className="text-2xl py-3">95.9 Mhz</h5>
@@ -25,7 +36,7 @@ const BreakSectionTwo = () => {
           <div className="w-20 h-1 rounded bg-white" />
           <p className="pt-2">Busko blato i okolica</p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

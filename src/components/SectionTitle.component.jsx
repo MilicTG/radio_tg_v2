@@ -1,14 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useScroll } from "../helpers/useScroll";
-
-const lineAnim = {
-  hidden: { width: "0%" },
-  show: {
-    width: "30%",
-    transition: { duration: 1 },
-  },
-};
+import { lineFromLeftAnimation } from "../animations/animations";
 
 const SectionTitle = (props) => {
   const [element, controls] = useScroll();
@@ -17,7 +10,7 @@ const SectionTitle = (props) => {
     <div className="mt-3 mb-5">
       <h2 className="text-3xl mb-1 text-gray-800">{props.title}</h2>
       <motion.div
-        variants={lineAnim}
+        variants={lineFromLeftAnimation}
         initial="hidden"
         animate={controls}
         ref={element}
