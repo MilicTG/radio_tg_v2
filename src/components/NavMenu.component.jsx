@@ -19,7 +19,7 @@ const NavMenu = ({ hidden }) => {
       exit="closed"
       animate={hidden ? "open" : "closed"}
       transition={{ damping: 300 }}
-      className="fixed z-30 w-full h-full bg-white top-20 right-0 py-16 items-start list-none text-center text-gray-800"
+      className="fixed z-30 w-full h-full lg:hidden bg-white top-20 right-0 py-16 items-start list-none text-center text-gray-800"
     >
       <ul className="w-screen h-auto">
         <li className="cursor-pointer w-full p-3 hover:text-blue-400 transition-all">
