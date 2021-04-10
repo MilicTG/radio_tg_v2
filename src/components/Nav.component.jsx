@@ -20,6 +20,10 @@ const Nav = () => {
     }
   };
 
+  const closeNavMenu = () => {
+    setIsHidden(false);
+  };
+
   window.addEventListener("scroll", changeNavbarBackground);
 
   const toggleHome = () => {
@@ -123,7 +127,7 @@ const Nav = () => {
           />
         </div>
       </div>
-      <NavMenu hidden={isHidden} />
+      <NavMenu hidden={isHidden} close={closeNavMenu} />
     </motion.nav>
   );
 };

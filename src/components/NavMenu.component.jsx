@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 
 const variants = {
@@ -11,7 +12,7 @@ const variants = {
   },
 };
 
-const NavMenu = ({ hidden }) => {
+const NavMenu = ({ hidden, close }) => {
   return (
     <motion.nav
       variants={variants}
@@ -23,21 +24,66 @@ const NavMenu = ({ hidden }) => {
     >
       <ul className="w-screen h-auto">
         <li className="cursor-pointer w-full p-3 hover:text-blue-400 transition-all">
-          Emisije
+          <Link
+            activeClass="active"
+            to="shows"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            onClick={close}
+          >
+            Emisije
+          </Link>
         </li>
         <li className="cursor-pointer h-full p-3 hover:text-blue-400 transition-all">
-          Marketing
+          <Link
+            activeClass="active"
+            to="marketing"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            onClick={close}
+          >
+            Marketing
+          </Link>
         </li>
         <li className="cursor-pointer h-full p-3 hover:text-blue-400 transition-all">
-          Kontakt
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            onClick={close}
+          >
+            Kontakt
+          </Link>
         </li>
         <li className="cursor-pointer h-full p-3 hover:text-blue-400 transition-all">
-          Aplikacija
+          <Link
+            activeClass="active"
+            to="app"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            onClick={close}
+          >
+            Aplikacija
+          </Link>
         </li>
-        <li className="h-full w-full p-3">
-          <button className="bg-blue-400 p-4 w-full text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
-            RTG Music
-          </button>
+        <li className="h-full w-full p-3 mt-10">
+          <Link
+            activeClass="active"
+            to="rtg_music"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            onClick={close}
+          >
+            <span className="w-full bg-blue-400 px-20 py-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
+              RTG Music
+            </span>
+          </Link>
         </li>
       </ul>
     </motion.nav>
