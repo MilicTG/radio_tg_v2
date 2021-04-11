@@ -1,14 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import Hero from "../components/Hero.component";
 import BreakSectionOne from "../components/BreakSectionOne.component";
-import BreakSectionTwo from "../components/BreakSeactionTwo.component";
+import BreakSectionTwo from "../components/BreakSectionTwo.component";
 import InfoSection from "../components/InfoSection.component";
 import Shows from "../components/Shows.component";
 import RTGMusic from "../components/RTGMusic.component";
 import ContactSection from "../components/ContactSection.component";
 import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
+import BtnToTop from "../components/BtnToTop.component";
 
 //local data
 import {
@@ -21,9 +22,26 @@ import imageBusiness from "../assets/img_business.jpg";
 import imageWedding from "../assets/img_wedding.jpg";
 
 const Main = () => {
+  const [returnToTopBtn, setReturnToTop] = useState(false);
+
+  const showReturnToTopBtn = () => {
+    if (window.scrollY >= 130) {
+      setReturnToTop(true);
+    } else {
+      setReturnToTop(false);
+    }
+  };
+
+  const returnToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  window.addEventListener("scroll", showReturnToTopBtn);
+
   return (
     <>
       <Hero />
+      <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
       <Shows />

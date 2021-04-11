@@ -10,7 +10,7 @@ import { revealFromTopAnimation } from "../animations/animations";
 
 const Nav = () => {
   const [navbarBg, setNavbarBg] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
+  const [isNavHidden, setNavIsHidden] = useState(false);
 
   const changeNavbarBackground = () => {
     if (window.scrollY >= 80) {
@@ -21,7 +21,7 @@ const Nav = () => {
   };
 
   const closeNavMenu = () => {
-    setIsHidden(false);
+    setNavIsHidden(false);
   };
 
   window.addEventListener("scroll", changeNavbarBackground);
@@ -33,7 +33,7 @@ const Nav = () => {
   return (
     <motion.nav
       className={
-        navbarBg || isHidden
+        navbarBg || isNavHidden
           ? "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear bg-white shadow-md "
           : "sticky w-full h-20 -mt-20 flex justify-center items-center flex-col top-0 left-0  z-20 transition duration-500 ease-linear"
       }
@@ -43,7 +43,7 @@ const Nav = () => {
     >
       <div className="px-4 w-full xl:max-w-con xl:px-0 flex items-center justify-between	">
         <img
-          src={navbarBg || isHidden ? Logo : LogoWhite}
+          src={navbarBg || isNavHidden ? Logo : LogoWhite}
           className="cursor-pointer w-20 z-30"
           alt="Logo"
           onClick={toggleHome}
@@ -122,12 +122,12 @@ const Nav = () => {
             size={20}
             easing="ease-in"
             color="#1F2937"
-            toggled={isHidden}
-            toggle={setIsHidden}
+            toggled={isNavHidden}
+            toggle={setNavIsHidden}
           />
         </div>
       </div>
-      <NavMenu hidden={isHidden} close={closeNavMenu} />
+      <NavMenu hidden={isNavHidden} close={closeNavMenu} />
     </motion.nav>
   );
 };
