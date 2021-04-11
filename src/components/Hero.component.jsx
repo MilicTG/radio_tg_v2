@@ -6,7 +6,7 @@ import {
   revelTextScaleAnimation,
 } from "../animations/animations";
 
-const Hero = () => {
+const Hero = ({ showPlayer }) => {
   return (
     <header className="h-screen">
       <div className="h-screen bg-hero bg-fixed bg-cover bg-no-repeat bg-center flex justify-center items-center">
@@ -31,7 +31,7 @@ const Hero = () => {
             </motion.h3>
           </div>
           <div className="flex justify-center items-center z-10">
-            <BtnPlay />
+            <BtnPlay click={showPlayer} />
           </div>
         </div>
       </div>

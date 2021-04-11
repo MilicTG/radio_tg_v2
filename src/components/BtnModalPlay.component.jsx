@@ -17,9 +17,9 @@ const BtnPlay = ({ click }) => {
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="h-14 w-14 lg:h-16 lg:w-16 flex justify-center items-center shadow-lg bg-white rounded-full"
+        className="h-14 w-14 mt-10 mb-8 lg:h-16 lg:w-16 flex justify-center items-center shadow-lg bg-blue-400 rounded-full"
       >
-        <FaPlay className="text-gray-800 h-6 w-6 lg:h-8 lg:w-8" />
+        <FaPlay className="text-white h-6 w-6 lg:h-8 lg:w-8" />
       </motion.button>
     </AnimatePresence>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import Hero from "../components/Hero.component";
+import Player from "../components/Player.component";
 import BreakSectionOne from "../components/BreakSectionOne.component";
 import BreakSectionTwo from "../components/BreakSectionTwo.component";
 import InfoSection from "../components/InfoSection.component";
@@ -23,6 +24,7 @@ import imageWedding from "../assets/img_wedding.jpg";
 
 const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
+  const [isPlayerVisible, setIsPlayerVisible] = useState(false);
 
   const showReturnToTopBtn = () => {
     if (window.scrollY >= 130) {
@@ -30,6 +32,14 @@ const Main = () => {
     } else {
       setReturnToTop(false);
     }
+  };
+
+  const showPlayer = () => {
+    setIsPlayerVisible(true);
+  };
+
+  const closePlayer = () => {
+    setIsPlayerVisible(false);
   };
 
   const returnToTop = () => {
@@ -40,7 +50,8 @@ const Main = () => {
 
   return (
     <>
-      <Hero />
+      <Hero showPlayer={showPlayer} />
+      <Player show={isPlayerVisible} close={closePlayer} />
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />

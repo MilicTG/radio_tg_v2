@@ -19,7 +19,7 @@ const BtnToTop = ({ show, click }) => {
         whileTap={{ scale: 0.9 }}
         className={
           show
-            ? "fixed z-50 bottom-10 right-5 lg:bottom-24 lg:right-10 flex justify-center items-center  w-12 h-12 rounded-full bg-blue-400 shadow-lg transition duration-500 ease-linear"
+            ? "fixed z-40 bottom-10 right-5 lg:bottom-24 lg:right-10 flex justify-center items-center  w-12 h-12 rounded-full bg-blue-400 shadow-lg transition duration-500 ease-linear cursor-pointer"
             : "hidden fixed bottom-10 justify-center items-center right-10 w-12 h-12 rounded-full transition duration-500 ease-linear"
         }
       >
