@@ -11,6 +11,21 @@ export const revealFromTopAnimation = {
   },
 };
 
+export const revealModal = {
+  hidden: {
+    opacity: 0,
+    scale: 0.85,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.6,
+  },
+};
+
 export const revealHeaderText = {
   hidden: {
     opacity: 0,

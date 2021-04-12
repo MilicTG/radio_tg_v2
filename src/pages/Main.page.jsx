@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import Hero from "../components/Hero.component";
 import Player from "../components/Player.component";
@@ -21,10 +21,15 @@ import {
 import imageAbout from "../assets/img_about.jpg";
 import imageBusiness from "../assets/img_business.jpg";
 import imageWedding from "../assets/img_wedding.jpg";
+import { RtgMainStream, RtgMusicStream } from "../data/local/StreamRadioUrls";
 
 const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
   const [isPlayerVisible, setIsPlayerVisible] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState("");
+
+  //audioRef
+  const audioRef = useRef(null);
 
   const showReturnToTopBtn = () => {
     if (window.scrollY >= 130) {
@@ -32,6 +37,14 @@ const Main = () => {
     } else {
       setReturnToTop(false);
     }
+  };
+
+  const setStreamUrl = (url) => {
+    setCurrentAudio(url);
+  };
+
+  const playAudio = () => {
+    audioRef.current.play();
   };
 
   const showPlayer = () => {
@@ -42,6 +55,12 @@ const Main = () => {
     setIsPlayerVisible(false);
   };
 
+  const startMainRadio = async () => {
+    await setStreamUrl(RtgMainStream);
+    showPlayer();
+    playAudio();
+  };
+
   const returnToTop = () => {
     scroll.scrollToTop();
   };
@@ -50,8 +69,8 @@ const Main = () => {
 
   return (
     <>
-      <Hero showPlayer={showPlayer} />
-      <Player show={isPlayerVisible} close={closePlayer} />
+      <Hero handleOnClick={startMainRadio} />
+      <Player audioRef={audioRef} show={isPlayerVisible} close={closePlayer} />
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
@@ -72,6 +91,7 @@ const Main = () => {
       <ContactSection />
       <AndroidApp />
       <Footer />
+      <audio ref={audioRef} src={currentAudio} />
     </>
   );
 };
