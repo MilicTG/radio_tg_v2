@@ -37,6 +37,8 @@ const Main = () => {
     playerTitle: "",
     playerSubTitle: "",
     playerUrl: "",
+    currentPlayingTime: 0,
+    durationOfFile: 0,
   });
 
   //audioRef
@@ -70,6 +72,21 @@ const Main = () => {
 
   const closePlayer = () => {
     setIsPlayerVisible(false);
+  };
+
+  const timeUpdateHandler = (e) => {
+    const current = e.target.currentTime;
+    const duration = e.target.duration;
+
+    //calculate percentage
+    const roundedCurrent = Math.round(current);
+    const roundedDuration = Math.round(duration);
+
+    setCurrentAudio({
+      ...currentAudio,
+      currentPlayingTime: roundedCurrent,
+      durationOfFile: roundedDuration,
+    });
   };
 
   const startMainRadio = async () => {
@@ -112,6 +129,8 @@ const Main = () => {
         image={currentAudio.playerImage}
         title={currentAudio.playerTitle}
         subTitle={currentAudio.playerSubTitle}
+        currentTime={currentAudio.currentPlayingTime}
+        duration={currentAudio.durationOfFile}
       />
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
@@ -133,7 +152,12 @@ const Main = () => {
       <ContactSection />
       <AndroidApp />
       <Footer />
-      <audio ref={audioRef} src={currentAudio.playerUrl} />
+      <audio
+        ref={audioRef}
+        src={currentAudio.playerUrl}
+        onTimeUpdate={timeUpdateHandler}
+        onLoadedMetadata={timeUpdateHandler}
+      />
     </>
   );
 };

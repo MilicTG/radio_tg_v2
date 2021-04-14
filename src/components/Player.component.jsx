@@ -4,6 +4,7 @@ import { RiCloseCircleFill } from "react-icons/all";
 import BtnModalPlay from "./BtnModalPlay.component";
 
 const Player = ({
+  audioRef,
   show,
   close,
   isPlaying,
@@ -11,7 +12,27 @@ const Player = ({
   image,
   title,
   subTitle,
+  currentTime,
+  duration,
 }) => {
+  const handleSeek = (e) => {
+    audioRef.current.currentTime = e.target.value;
+  };
+
+  const getTime = (time) => {
+    return (
+      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+    );
+  };
+
+  const handleInfinity = (time) => {
+    if (time === Infinity) {
+      return "Neograniceno";
+    } else {
+      getTime(time);
+    }
+  };
+
   if (!show) {
     return null;
   }
@@ -34,15 +55,16 @@ const Player = ({
         </h3>
         <p>{subTitle}</p>
         <div className="flex flex-row justify-evenly w-full mt-10">
-          <p className="text-gray-900 mr-5">00:00</p>
+          <p className="text-gray-900 mr-5">{getTime(currentTime)}</p>
           <input
-            min="0"
-            max="100"
-            value="0"
+            min={0}
+            max={duration || 0}
+            value={currentTime}
             type="range"
+            onChange={handleSeek}
             className="cursor-pointer w-full"
           />
-          <p className="text-gray-900 ml-5">00:00</p>
+          <p className="text-gray-900 ml-5">{getTime(duration)}</p>
         </div>
         <BtnModalPlay isPlaying={isPlaying} handlePlaying={handlePlaying} />
       </div>
