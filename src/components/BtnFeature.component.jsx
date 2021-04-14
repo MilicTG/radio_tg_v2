@@ -1,10 +1,11 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const BtnFeature = ({ title }) => {
+const BtnFeature = ({ title, onClick }) => {
   return (
     <AnimatePresence>
       <motion.button
+        onClick={onClick}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

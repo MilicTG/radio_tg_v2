@@ -2,7 +2,7 @@ import React from "react";
 import { FaPlay } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-const BtnPlay = ({ click }) => {
+const BtnMain = ({ click }) => {
   return (
     <AnimatePresence>
       <motion.button
@@ -17,12 +17,14 @@ const BtnPlay = ({ click }) => {
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="h-14 w-14 lg:h-16 lg:w-16 flex justify-center items-center shadow-lg bg-white rounded-full"
+        className="px-8 py-4 text-white rounded-md cursor-pointer group hover:bg-blue-400 transition-all flex justify-center items-center shadow-lg bg-white"
       >
-        <FaPlay className="text-gray-800 h-6 w-6 lg:h-8 lg:w-8" />
+        <p className="text-gray-900 group-hover:text-white">
+          Slusajte nas uzivo
+        </p>
       </motion.button>
     </AnimatePresence>
   );
 };
 
-export default BtnPlay;
+export default BtnMain;

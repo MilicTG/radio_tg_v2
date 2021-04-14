@@ -22,11 +22,22 @@ import imageAbout from "../assets/img_about.jpg";
 import imageBusiness from "../assets/img_business.jpg";
 import imageWedding from "../assets/img_wedding.jpg";
 import { RtgMainStream, RtgMusicStream } from "../data/local/StreamRadioUrls";
+import bckRtgMain from "../assets/bck_stream_rtg.jpg";
+import bckRtgMusic from "../assets/bck_stream_music.jpg";
+import imageDef from "../assets/img_def_player.jpg";
 
 const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
+
+  //for player
   const [isPlayerVisible, setIsPlayerVisible] = useState(false);
-  const [currentAudio, setCurrentAudio] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState({
+    playerImage: imageDef,
+    playerTitle: "",
+    playerSubTitle: "",
+    playerUrl: "",
+  });
 
   //audioRef
   const audioRef = useRef(null);
@@ -39,12 +50,18 @@ const Main = () => {
     }
   };
 
-  const setStreamUrl = (url) => {
-    setCurrentAudio(url);
-  };
-
   const playAudio = () => {
     audioRef.current.play();
+    setIsPlaying(true);
+  };
+
+  const pauseAudio = () => {
+    audioRef.current.pause();
+    setIsPlaying(false);
+  };
+
+  const handlePlayer = () => {
+    isPlaying ? pauseAudio() : playAudio();
   };
 
   const showPlayer = () => {
@@ -56,7 +73,23 @@ const Main = () => {
   };
 
   const startMainRadio = async () => {
-    await setStreamUrl(RtgMainStream);
+    await setCurrentAudio({
+      playerImage: bckRtgMain,
+      playerTitle: "Radio Tomislavgrad",
+      playerSubTitle: "Duvanjski radio",
+      playerUrl: RtgMainStream,
+    });
+    showPlayer();
+    playAudio();
+  };
+
+  const startRtgMusic = async () => {
+    await setCurrentAudio({
+      playerImage: bckRtgMusic,
+      playerTitle: "RTG Music",
+      playerSubTitle: "Najbolji internet radio",
+      playerUrl: RtgMusicStream,
+    });
     showPlayer();
     playAudio();
   };
@@ -70,12 +103,21 @@ const Main = () => {
   return (
     <>
       <Hero handleOnClick={startMainRadio} />
-      <Player audioRef={audioRef} show={isPlayerVisible} close={closePlayer} />
+      <Player
+        audioRef={audioRef}
+        show={isPlayerVisible}
+        isPlaying={isPlaying}
+        handlePlaying={handlePlayer}
+        close={closePlayer}
+        image={currentAudio.playerImage}
+        title={currentAudio.playerTitle}
+        subTitle={currentAudio.playerSubTitle}
+      />
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
       <Shows />
-      <RTGMusic />
+      <RTGMusic handleOnClick={startRtgMusic} />
       <InfoSection
         id="marketing"
         {...marketYourBusinessData}
@@ -91,7 +133,7 @@ const Main = () => {
       <ContactSection />
       <AndroidApp />
       <Footer />
-      <audio ref={audioRef} src={currentAudio} />
+      <audio ref={audioRef} src={currentAudio.playerUrl} />
     </>
   );
 };

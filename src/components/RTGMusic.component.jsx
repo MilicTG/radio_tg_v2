@@ -9,7 +9,7 @@ import {
 
 import BtnFeature from "./BtnFeature.component";
 
-const RTGMusic = () => {
+const RTGMusic = ({ handleOnClick }) => {
   const [element, controls] = useScroll();
 
   return (
@@ -60,7 +60,7 @@ const RTGMusic = () => {
             elementum vulputate nibh. Nulla sit amet dolor in lacus porttitor
             ullamcorper vel sit amet risus.
           </motion.p>
-          <BtnFeature title="Slusajte RTG Music" />
+          <BtnFeature onClick={handleOnClick} title="Slusajte RTG Music" />
         </div>
       </div>
     </section>

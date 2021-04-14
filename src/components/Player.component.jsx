@@ -3,9 +3,15 @@ import { motion } from "framer-motion";
 import { RiCloseCircleFill } from "react-icons/all";
 import BtnModalPlay from "./BtnModalPlay.component";
 
-import imageTemp from "../assets/bck_microphone.jpg";
-
-const Player = ({ show, close, isPlaying }) => {
+const Player = ({
+  show,
+  close,
+  isPlaying,
+  handlePlaying,
+  image,
+  title,
+  subTitle,
+}) => {
   if (!show) {
     return null;
   }
@@ -19,14 +25,14 @@ const Player = ({ show, close, isPlaying }) => {
           className="absolute bg-white rounded-full -top-4 -right-4 text-red-500 cursor-pointer hover:text-red-600"
         />
         <img
-          src={imageTemp}
+          src={image}
           className="h-64 rounded-md shadow-2xl object-cover"
           alt=""
         />
         <h3 className="p-4 mt-8 text-xl md:text-2xl lg:text-3xl text-gray-900">
-          Radio Tomislavgrad
+          {title}
         </h3>
-        <p>Duvanjski radio</p>
+        <p>{subTitle}</p>
         <div className="flex flex-row justify-evenly w-full mt-10">
           <p className="text-gray-900 mr-5">00:00</p>
           <input
@@ -38,7 +44,7 @@ const Player = ({ show, close, isPlaying }) => {
           />
           <p className="text-gray-900 ml-5">00:00</p>
         </div>
-        <BtnModalPlay />
+        <BtnModalPlay isPlaying={isPlaying} handlePlaying={handlePlaying} />
       </div>
     </motion.div>
   );

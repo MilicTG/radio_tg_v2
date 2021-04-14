@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BtnPlay from "./BtnPlay.component";
+import BtnMain from "./BtnMain.component";
 import {
   revealHeaderText,
   revelTextScaleAnimation,
@@ -31,7 +31,7 @@ const Hero = ({ handleOnClick }) => {
             </motion.h3>
           </div>
           <div className="flex justify-center items-center z-10">
-            <BtnPlay click={handleOnClick} />
+            <BtnMain click={handleOnClick} />
           </div>
         </div>
       </div>
