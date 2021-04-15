@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import db from "../data/online/FirebaseAPI";
 
 import SectionTitle from "./SectionTitle.component";
 import ShowCard from "./ShowCard.component";
@@ -15,6 +16,22 @@ import knjiznicaImg from "../assets/img_knjiznica.jpg";
 import ostaloImg from "../assets/img_ostalo.jpg";
 
 const Shows = () => {
+  const [shows, setShows] = useState([]);
+
+  const fetchShows = async () => {
+    const response = db.collection("radioShow/01zrcalo/showEntity");
+
+    const data = await response.get();
+    data.docs.forEach((item) => {
+      setShows([...shows, item.data()]);
+    });
+    console.log(shows);
+  };
+
+  useEffect(() => {
+    fetchShows();
+  }, []);
+
   return (
     <section
       id="shows"
