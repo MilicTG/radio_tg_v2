@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import db from "../data/online/FirebaseAPI";
 
 import SectionTitle from "./SectionTitle.component";
 import ShowCard from "./ShowCard.component";
@@ -15,21 +14,29 @@ import slusamImg from "../assets/img_slusam.jpg";
 import knjiznicaImg from "../assets/img_knjiznica.jpg";
 import ostaloImg from "../assets/img_ostalo.jpg";
 
+import { db } from "../data/online/FirebaseAPI";
+
 const Shows = () => {
-  const [shows, setShows] = useState([]);
+  const [shows, setShows] = useState();
 
-  const fetchShows = async () => {
-    const response = db.collection("radioShow/01zrcalo/showEntity");
-
-    const data = await response.get();
-    data.docs.forEach((item) => {
-      setShows([...shows, item.data()]);
-    });
-    console.log(shows);
-  };
+  const [zrcaloShow, setZrcaloShow] = useState();
+  const [strunicaShow, setStrunicaShow] = useState();
+  const [glazbaonicaShow, setGlazbaonicaShow] = useState();
+  const [petmilShow, setPetmilShow] = useState();
+  const [obiteljskiShow, setObiteljskiShow] = useState();
+  const [razgovoriShow, setRazgovoriShow] = useState();
+  const [slusamShow, setSlusamShow] = useState();
+  const [knjiznicaShow, setKnjiznicaShow] = useState();
 
   useEffect(() => {
-    fetchShows();
+    db.collection("radioShow/01zrcalo/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        console.log(data);
+        setShows(data);
+      });
   }, []);
 
   return (
