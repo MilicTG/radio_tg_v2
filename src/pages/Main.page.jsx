@@ -1,16 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import Hero from "../components/Hero.component";
 import Player from "../components/Player.component";
 import BreakSectionOne from "../components/BreakSectionOne.component";
 import BreakSectionTwo from "../components/BreakSectionTwo.component";
 import InfoSection from "../components/InfoSection.component";
+import ShowModal from "../components/ShowModal.component";
 import Shows from "../components/Shows.component";
 import RTGMusic from "../components/RTGMusic.component";
 import ContactSection from "../components/ContactSection.component";
 import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
+
+//online data
+import { db } from "../data/online/FirebaseAPI";
 
 //local data
 import {
@@ -41,8 +45,174 @@ const Main = () => {
     durationOfFile: 0,
   });
 
+  //shows
+  const [selectedShow, setSelectedShow] = useState();
+  const [zrcaloShow, setZrcaloShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [strunicaShow, setStrunicaShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [glazbaonicaShow, setGlazbaonicaShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [petmilShow, setPetmilShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [obiteljskiShow, setObiteljskiShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [razgovoriShow, setRazgovoriShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [slusamShow, setSlusamShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [knjiznicaShow, setKnjiznicaShow] = useState({
+    showTitle: "",
+    showList: [],
+  });
+  const [restShow, setRestShow] = useState({
+    showTitle: "Ostale emisije",
+    showList: [],
+  });
+
+  //showList
+  const [isShowListVisible, setIsShowListVisible] = useState(false);
+
+  useEffect(() => {
+    getFirebaseData();
+  }, []);
+
   //audioRef
   const audioRef = useRef(null);
+
+  const getFirebaseData = () => {
+    getZrcaloShow();
+    getStrunicaShow();
+    getGlazbaonicaShow();
+    getPetmilShow();
+    getObiteljskiShow();
+    getRazgovoriShow();
+    getSlusamShow();
+    getKnjiznicaShow();
+  };
+
+  const getZrcaloShow = async () => {
+    await db
+      .collection("radioShow/01zrcalo/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setZrcaloShow({ showTitle: "U dnevnom zrcalu", showList: data });
+      });
+  };
+
+  const getStrunicaShow = async () => {
+    await db
+      .collection("radioShow/02strunica/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setStrunicaShow({
+          showTitle: "Šarenica, strunica, tkanica",
+          showList: data,
+        });
+      });
+  };
+
+  const getGlazbaonicaShow = async () => {
+    await db
+      .collection("radioShow/03glazbaonica/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setGlazbaonicaShow({
+          showTitle: "Glazbaonica",
+          showList: data,
+        });
+      });
+  };
+
+  const getPetmilShow = async () => {
+    await db
+      .collection("radioShow/04petmil/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setPetmilShow({
+          showTitle: "Klub Pet Mil",
+          showList: data,
+        });
+      });
+  };
+
+  const getObiteljskiShow = async () => {
+    await db
+      .collection("radioShow/05obiteljski/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setObiteljskiShow({
+          showTitle: "Obiteljski album",
+          showList: data,
+        });
+      });
+  };
+
+  const getRazgovoriShow = async () => {
+    await db
+      .collection("radioShow/06razgovori/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setRazgovoriShow({
+          showTitle: "Razgovori ugodni",
+          showList: data,
+        });
+      });
+  };
+
+  const getSlusamShow = async () => {
+    await db
+      .collection("radioShow/07slusam/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setSlusamShow({
+          showTitle: "Slušam, dakle učim!",
+          showList: data,
+        });
+      });
+  };
+
+  const getKnjiznicaShow = async () => {
+    await db
+      .collection("radioShow/08knjiznica/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setKnjiznicaShow({
+          showTitle: "Radio knjižnica",
+          showList: data,
+        });
+      });
+  };
 
   const showReturnToTopBtn = () => {
     if (window.scrollY >= 130) {
@@ -111,6 +281,61 @@ const Main = () => {
     playAudio();
   };
 
+  const sendShowData = async (id) => {
+    console.log(id);
+    switch (id) {
+      case "00":
+        return await setSelectedShow(zrcaloShow);
+      case "01":
+        return await setSelectedShow(strunicaShow);
+      case "02":
+        return await setSelectedShow(petmilShow);
+      case "03":
+        return await setSelectedShow(glazbaonicaShow);
+      case "04":
+        return await setSelectedShow(razgovoriShow);
+      case "05":
+        return await setSelectedShow(obiteljskiShow);
+      case "06":
+        return await setSelectedShow(slusamShow);
+      case "07":
+        return await setSelectedShow(knjiznicaShow);
+      case "08":
+        return await setSelectedShow(restShow);
+      default:
+        return [];
+    }
+  };
+
+  const handleShowPlaying = async (show) => {
+    let showDefultImage = null;
+
+    if (show.image == null) {
+      showDefultImage = bckRtgMain;
+    } else {
+      showDefultImage = show.image;
+    }
+
+    closeShowList();
+    await setCurrentAudio({
+      playerImage: showDefultImage,
+      playerTitle: show.title,
+      playerSubTitle: show.date,
+      playerUrl: show.showUrl,
+    });
+    showPlayer();
+    playAudio();
+  };
+
+  const showShowList = (id) => {
+    sendShowData(id);
+    setIsShowListVisible(true);
+  };
+
+  const closeShowList = () => {
+    setIsShowListVisible(false);
+  };
+
   const returnToTop = () => {
     scroll.scrollToTop();
   };
@@ -135,7 +360,13 @@ const Main = () => {
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
-      <Shows />
+      <ShowModal
+        show={isShowListVisible}
+        showData={selectedShow}
+        startShow={handleShowPlaying}
+        close={closeShowList}
+      />
+      <Shows showShowList={showShowList} />
       <RTGMusic handleOnClick={startRtgMusic} />
       <InfoSection
         id="marketing"

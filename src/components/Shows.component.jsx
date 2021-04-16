@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import SectionTitle from "./SectionTitle.component";
 import ShowCard from "./ShowCard.component";
@@ -14,31 +14,7 @@ import slusamImg from "../assets/img_slusam.jpg";
 import knjiznicaImg from "../assets/img_knjiznica.jpg";
 import ostaloImg from "../assets/img_ostalo.jpg";
 
-import { db } from "../data/online/FirebaseAPI";
-
-const Shows = () => {
-  const [shows, setShows] = useState();
-
-  const [zrcaloShow, setZrcaloShow] = useState();
-  const [strunicaShow, setStrunicaShow] = useState();
-  const [glazbaonicaShow, setGlazbaonicaShow] = useState();
-  const [petmilShow, setPetmilShow] = useState();
-  const [obiteljskiShow, setObiteljskiShow] = useState();
-  const [razgovoriShow, setRazgovoriShow] = useState();
-  const [slusamShow, setSlusamShow] = useState();
-  const [knjiznicaShow, setKnjiznicaShow] = useState();
-
-  useEffect(() => {
-    db.collection("radioShow/01zrcalo/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        console.log(data);
-        setShows(data);
-      });
-  }, []);
-
+const Shows = ({ showShowList }) => {
   return (
     <section
       id="shows"
@@ -48,6 +24,7 @@ const Shows = () => {
         <SectionTitle title="Naše najslušanije emisije" />
         <div className="w-full pt-2 pb-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-11 xl:grid-cols-3 xl:gap-12">
           <ShowCard
+            onClick={() => showShowList(showCardData[0].showId)}
             key={showCardData[0].showId}
             title={showCardData[0].showTitle}
             image={zrcaloImg}
@@ -56,6 +33,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[1].showId)}
             key={showCardData[1].showId}
             title={showCardData[1].showTitle}
             image={strunicaImg}
@@ -64,6 +42,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[2].showId)}
             key={showCardData[2].showId}
             title={showCardData[2].showTitle}
             image={petmilImg}
@@ -72,6 +51,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[3].showId)}
             key={showCardData[3].showId}
             title={showCardData[3].showTitle}
             image={glazbaonicaImg}
@@ -80,6 +60,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[4].showId)}
             key={showCardData[4].showId}
             title={showCardData[4].showTitle}
             image={razgovoriImg}
@@ -88,6 +69,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[5].showId)}
             key={showCardData[5].showId}
             title={showCardData[5].showTitle}
             image={obiteljskiImg}
@@ -96,6 +78,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[6].showId)}
             key={showCardData[6].showId}
             title={showCardData[6].showTitle}
             image={slusamImg}
@@ -104,6 +87,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[7].showId)}
             key={showCardData[7].showId}
             title={showCardData[7].showTitle}
             image={knjiznicaImg}
@@ -112,6 +96,7 @@ const Shows = () => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[8].showId)}
             key={showCardData[8].showId}
             title={showCardData[8].showTitle}
             image={ostaloImg}

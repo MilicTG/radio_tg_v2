@@ -109,7 +109,7 @@ const Nav = () => {
                 smooth={true}
                 duration={1000}
               >
-                <span className="bg-blue-400 p-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
+                <span className="bg-blue-400 py-4 px-8 ml-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
                   RTG Music
                 </span>
               </Link>

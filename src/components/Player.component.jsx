@@ -38,8 +38,14 @@ const Player = ({
   }
 
   return (
-    <motion.div className="fixed z-50 left-0 right-0 top-0 bottom-0 bg-gray-700 bg-opacity-40 flex justify-center items-center">
-      <div className="z-30 relative bg-white p-8 rounded-md shadow-2xl flex justify-center items-center flex-col">
+    <motion.div
+      onClick={close}
+      className="fixed z-50 left-0 right-0 top-0 bottom-0 bg-gray-700 bg-opacity-40 flex justify-center items-center"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="z-30 relative bg-white p-8 rounded-md shadow-2xl flex justify-center items-center flex-col"
+      >
         <RiCloseCircleFill
           size="3rem"
           onClick={close}
