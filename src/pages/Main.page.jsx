@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { store } from "react-notifications-component";
 import Hero from "../components/Hero.component";
 import Player from "../components/Player.component";
 import BreakSectionOne from "../components/BreakSectionOne.component";
@@ -12,6 +13,7 @@ import ContactSection from "../components/ContactSection.component";
 import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
+import BtnPlayerMin from "../components/BtnPlayerMin.component";
 
 //online data
 import { db } from "../data/online/FirebaseAPI";
@@ -242,6 +244,7 @@ const Main = () => {
 
   const closePlayer = () => {
     setIsPlayerVisible(false);
+    showPlayerNotification();
   };
 
   const timeUpdateHandler = (e) => {
@@ -340,6 +343,22 @@ const Main = () => {
     scroll.scrollToTop();
   };
 
+  const showPlayerNotification = () => {
+    if (isPlaying && currentAudio.playerTitle !== null) {
+      store.addNotification({
+        title: "Player je u pozadini",
+        message: "Za povratak u player kliknite na ikonu note sa desne strane",
+        type: "info",
+        insert: "top",
+        container: "top-center",
+        dismiss: {
+          duration: 5000,
+          onScreen: true,
+        },
+      });
+    }
+  };
+
   window.addEventListener("scroll", showReturnToTopBtn);
 
   return (
@@ -358,6 +377,7 @@ const Main = () => {
         duration={currentAudio.durationOfFile}
       />
       <BtnToTop show={returnToTopBtn} click={returnToTop} />
+      <BtnPlayerMin audio={currentAudio} click={showPlayer} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
       <ShowModal
@@ -384,6 +404,7 @@ const Main = () => {
       <AndroidApp />
       <Footer />
       <audio
+        buffered
         ref={audioRef}
         src={currentAudio.playerUrl}
         onTimeUpdate={timeUpdateHandler}
