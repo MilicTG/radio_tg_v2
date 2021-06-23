@@ -44,7 +44,7 @@ const Player = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="z-30 relative bg-white p-8 rounded-md shadow-2xl flex justify-center items-center flex-col"
+        className="m-4 z-30 relative bg-white p-4 rounded-md shadow-2xl flex justify-center items-center flex-col"
       >
         <RiCloseCircleFill
           size="3rem"
@@ -53,14 +53,16 @@ const Player = ({
         />
         <img
           src={image}
-          className="h-64 rounded-md shadow-2xl object-cover"
+          className="w-72 h-44 md:w-80 md:h-52 lg:w-96 lg:h-64 rounded-md shadow-2xl object-cover"
           alt=""
         />
-        <h3 className="p-4 mt-8 text-xl md:text-2xl lg:text-3xl text-gray-900">
+        <h3 className="p-2 mt-4 text-xl md:text-2xl lg:text-3xl text-center text-gray-900">
           {title}
         </h3>
-        <p>{subTitle}</p>
-        <div className="flex flex-row justify-evenly w-full mt-10">
+        <p className="text-sm md:text-lg lg:text-xl pt-2 opacity-80">
+          {subTitle}
+        </p>
+        <div className="flex flex-row justify-evenly w-full mt-8">
           <p className="text-gray-900 mr-5">{getTime(currentTime)}</p>
           <input
             min={0}

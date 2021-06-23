@@ -17,7 +17,7 @@ const BtnPlay = ({ isPlaying, handlePlaying }) => {
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="h-14 w-14 mt-10 mb-8 lg:h-16 lg:w-16 flex justify-center items-center shadow-lg bg-blue-400 rounded-full"
+        className="h-14 w-14 mt-5 mb-5 lg:h-16 lg:w-16 flex justify-center items-center shadow-lg bg-blue-400 rounded-full"
       >
         {isPlaying ? (
           <FaPause className="text-white h-6 w-6 lg:h-8 lg:w-8" />
