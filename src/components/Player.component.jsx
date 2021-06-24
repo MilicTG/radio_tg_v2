@@ -25,14 +25,6 @@ const Player = ({
     );
   };
 
-  const handleInfinity = (time) => {
-    if (time === Infinity) {
-      return "Neograniceno";
-    } else {
-      getTime(time);
-    }
-  };
-
   if (!show) {
     return null;
   }
