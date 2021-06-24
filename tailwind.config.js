@@ -11,6 +11,7 @@ module.exports = {
     },
     maxWidth: {
       con: "1200px",
+      player: "410px",
     },
     letterSpacing: {
       heroWide: ".7rem",

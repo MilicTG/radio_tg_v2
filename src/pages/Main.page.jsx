@@ -352,7 +352,7 @@ const Main = () => {
         insert: "top",
         container: "top-center",
         dismiss: {
-          duration: 5000,
+          duration: 3000,
           onScreen: true,
         },
       });
