@@ -4,6 +4,7 @@ import { RiCloseCircleFill } from "react-icons/all";
 import BtnModalPlay from "./BtnModalPlay.component";
 
 const Player = ({
+  src,
   audioRef,
   show,
   close,

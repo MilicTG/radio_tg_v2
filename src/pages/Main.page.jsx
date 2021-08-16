@@ -284,6 +284,10 @@ const Main = () => {
     playAudio();
   };
 
+  const handleError = () => {
+    console.log(audioRef.current.error);
+  };
+
   const sendShowData = async (id) => {
     console.log(id);
     switch (id) {
@@ -409,6 +413,7 @@ const Main = () => {
         src={currentAudio.playerUrl}
         onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler}
+        onError={handleError}
       />
     </>
   );
