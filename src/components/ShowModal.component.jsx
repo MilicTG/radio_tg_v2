@@ -25,12 +25,12 @@ const ShowModal = ({ show, close, isPlaying, startShow, showData }) => {
           {showData.showTitle}
         </h3>
 
-        <ul className="h-96 w-full overflow-y-scroll">
+        <ul className="h-96 xl:h-screen xl:max-h-showModal w-full overflow-y-scroll">
           {showData.showList.map((data, i) => {
             return (
               <li
                 key={data.id}
-                className="w-full my-2 border-b border-solid border-gray-900 border-opacity-10 flex flex-row items-center justify-between"
+                className="w-full  my-2 border-b border-solid border-gray-900 border-opacity-10 flex flex-row items-center justify-between"
               >
                 <div className="flex flex-col py-3">
                   <h4 className="text-xl text-gray-900">{data.title}</h4>

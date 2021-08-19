@@ -13,6 +13,9 @@ module.exports = {
       con: "1200px",
       player: "410px",
     },
+    maxHeight: {
+      showModal: "75vh",
+    },
     letterSpacing: {
       heroWide: ".7rem",
     },
