@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between items-start">
           <div className=" md:col-span-2 lg:col-span-1">
             <img src={logoLight} alt="" className="w-40 h-auto py-4" />
-            <p className="text-white">Trg dr. Franje Tuđmana bb</p>
+            <p className="text-white">Trg dr. Franje Tuđmana 41</p>
             <p className="text-white">80240, Tomislavgrad, BiH</p>
           </div>
 
@@ -40,6 +40,10 @@ const Footer = () => {
               </h6>
               <p className="text-white">Radio Tomislavgrad</p>
               <p className="text-white">RTG Music</p>
+              <p className="text-white">RTG Kids</p>
+              <p className="text-white">RTG Etno</p>
+              <p className="text-white">RTG Patriot</p>
+              <p className="text-white">RTG Frama</p>
             </div>
           </div>
         </div>
@@ -49,7 +53,7 @@ const Footer = () => {
 
           <div className="w-full h-auto py-1 flex flex-col lg:flex-row justify-between">
             <p className="text-xs text-blue-50">
-              Sva prava pridrzana Radio Tomislavgrad
+              &copy; Radio Tomislavgrad {new Date().getFullYear()}
             </p>
             <p className="text-xs text-blue-50">
               Designed and developed by Ivan Milic

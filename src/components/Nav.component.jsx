@@ -110,7 +110,7 @@ const Nav = () => {
                 duration={1000}
               >
                 <span className="bg-blue-400 py-4 px-8 ml-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
-                  RTG Music
+                  RTG Streams
                 </span>
               </Link>
             </li>

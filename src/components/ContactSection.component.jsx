@@ -89,7 +89,7 @@ const ContactSection = () => {
             </div>
             <div>
               <h5 className="text-2xl text-gray-800 py-1">Adresa</h5>
-              <p className="text-gray-800">Trg dr. Franje Tuđmana bb</p>
+              <p className="text-gray-800">Trg dr. Franje Tuđmana 41</p>
               <p className="text-gray-800">80240, Tomislavgrad, BiH</p>
             </div>
           </motion.div>
