@@ -30,7 +30,7 @@ const Hero = ({ handleOnClick }) => {
               95.1,95.9 i 103.3Mhz
             </motion.h3>
           </div>
-          <div className="flex justify-center items-center z-10">
+          <div className="w-full flex justify-center items-center z-10">
             <BtnMain click={handleOnClick} />
           </div>
         </div>
