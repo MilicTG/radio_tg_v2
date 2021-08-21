@@ -1,5 +1,3 @@
-import React from "react";
-
 import SectionTitle from "./SectionTitle.component";
 import ShowCard from "./ShowCard.component";
 

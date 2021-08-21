@@ -5,8 +5,9 @@ import {
   revealHeaderText,
   revelTextScaleAnimation,
 } from "../animations/animations";
+import BtnStreams from "./BtnStreams.component";
 
-const Hero = ({ handleOnClick }) => {
+const Hero = ({ startMainStream, openStreamMenu }) => {
   return (
     <header className="h-screen">
       <div className="h-screen bg-hero bg-fixed bg-cover bg-no-repeat bg-center flex justify-center items-center">
@@ -30,8 +31,9 @@ const Hero = ({ handleOnClick }) => {
               95.1,95.9 i 103.3Mhz
             </motion.h3>
           </div>
-          <div className="w-full flex justify-center items-center z-10">
-            <BtnMain click={handleOnClick} />
+          <div className="w-2/4 flex flex-col md:flex-row justify-center items-center z-10">
+            <BtnMain click={startMainStream} />
+            <BtnStreams click={openStreamMenu} />
           </div>
         </div>
       </div>

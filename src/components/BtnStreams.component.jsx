@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const BtnMain = ({ click }) => {
+const BtnStreams = ({ click }) => {
   return (
     <AnimatePresence>
       <motion.button
@@ -16,14 +16,14 @@ const BtnMain = ({ click }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="w-40 py-4 mx-8 my-4 text-white rounded-md cursor-pointer group 
-        hover:bg-blue-400 transition-all flex justify-center items-center shadow-lg bg-white"
+        hover:bg-white transition-all flex justify-center items-center shadow-lg bg-gray-700 bg-opacity-70"
       >
-        <p className="text-gray-900 group-hover:text-white flex flex-row items-center">
-          RTG uživo
+        <p className="text-white group-hover:text-gray-900 flex flex-row items-center">
+          RTG Streamovi
         </p>
       </motion.button>
     </AnimatePresence>
   );
 };
 
-export default BtnMain;
+export default BtnStreams;

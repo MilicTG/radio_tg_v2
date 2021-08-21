@@ -31,6 +31,7 @@ import { RtgMainStream, RtgMusicStream } from "../data/local/StreamRadioUrls";
 import bckRtgMain from "../assets/bck_stream_rtg.jpg";
 import bckRtgMusic from "../assets/bck_stream_music.jpg";
 import imageDef from "../assets/img_def_player.jpg";
+import StreamMenuCard from "../components/StreamMenuCard.component";
 
 const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
@@ -88,6 +89,9 @@ const Main = () => {
 
   //showList
   const [isShowListVisible, setIsShowListVisible] = useState(false);
+
+  //streamList
+  const [isStreamListVisible, setIsStreamListVisible] = useState(false);
 
   useEffect(() => {
     getFirebaseData();
@@ -343,6 +347,14 @@ const Main = () => {
     setIsShowListVisible(false);
   };
 
+  const showStreamList = () => {
+    setIsStreamListVisible(true);
+  };
+
+  const closeStreamList = () => {
+    setIsStreamListVisible(false);
+  };
+
   const returnToTop = () => {
     scroll.scrollToTop();
   };
@@ -367,7 +379,7 @@ const Main = () => {
 
   return (
     <>
-      <Hero handleOnClick={startMainRadio} />
+      <Hero startMainStream={startMainRadio} openStreamMenu={showStreamList} />
       <Player
         audioRef={audioRef}
         show={isPlayerVisible}
@@ -384,6 +396,7 @@ const Main = () => {
       <BtnPlayerMin audio={currentAudio} click={showPlayer} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
+      <StreamMenuCard show={isStreamListVisible} close={closeStreamList} />
       <ShowModal
         show={isShowListVisible}
         showData={selectedShow}
