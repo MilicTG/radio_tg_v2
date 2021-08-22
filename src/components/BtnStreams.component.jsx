@@ -19,7 +19,7 @@ const BtnStreams = ({ click }) => {
         hover:bg-white transition-all flex justify-center items-center shadow-lg bg-gray-700 bg-opacity-70"
       >
         <p className="text-white group-hover:text-gray-900 flex flex-row items-center">
-          RTG Streamovi
+          RTG streamovi
         </p>
       </motion.button>
     </AnimatePresence>

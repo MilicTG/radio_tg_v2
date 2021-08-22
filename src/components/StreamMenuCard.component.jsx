@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { RiCloseCircleFill, FaPlay } from "react-icons/all";
 
+import StreamCard from "./StreamCard.component";
+
+import musicStreamImage from "../assets/img_stream_music.jpg";
+import kidsStreamImage from "../assets/img_stream_kids.jpg";
+import framaStreamImage from "../assets/img_stream_frama.jpg";
+import strunicaStreamImage from "../assets/img_stream_strunica.jpg";
+import patriotStreamImage from "../assets/img_stream_patriot.jpg";
+
 const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
   if (!show) {
     return null;
@@ -20,24 +28,17 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
           onClick={close}
           className="absolute bg-white rounded-full -top-4 -right-4 text-red-500 cursor-pointer hover:text-red-600"
         />
-        <h2 className="text-3xl mb-1 text-gray-800">Nasi Streamovi</h2>
+        <h2 className="text-3xl mb-1 text-gray-800">Naši streamovi</h2>
+        <p className="text-base font-light mb-1 text-gray-800">
+          Za svakoga ponešto
+        </p>
         <ul className="h-96 xl:h-screen xl:max-h-showModal w-full overflow-y-scroll">
-          <li className="py-8">
-            <div className="w-96 px-8 py-4 mb-8 mr-4 bg-blue-400 rounded-md text-white">
-              RTG Music
-            </div>
-            <div className="w-96 px-8 py-4 mb-8 mr-4 bg-blue-400 rounded-md text-white">
-              RTG Kids
-            </div>
-            <div className="w-96 px-8 py-4 mb-8 mr-4 bg-blue-400 rounded-md text-white">
-              RTG Frama
-            </div>
-            <div className="w-96 px-8 py-4 mb-8 mr-4 bg-blue-400 rounded-md text-white">
-              RTG Strunica
-            </div>
-            <div className="w-96 px-8 py-4 mb-8 mr-4 bg-blue-400 rounded-md text-white">
-              RTG Za dom s...
-            </div>
+          <li className="py-4">
+            <StreamCard image={musicStreamImage} title={"RTG Music"} />
+            <StreamCard image={kidsStreamImage} title={"RTG Kids"} />
+            <StreamCard image={framaStreamImage} title={"RTG Frama"} />
+            <StreamCard image={strunicaStreamImage} title={"RTG Strunica"} />
+            <StreamCard image={patriotStreamImage} title={"RTG Za dom s..."} />
           </li>
         </ul>
       </div>
