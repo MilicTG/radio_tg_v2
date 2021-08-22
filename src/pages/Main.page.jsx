@@ -28,8 +28,8 @@ import imageAbout from "../assets/img_about.jpg";
 import imageBusiness from "../assets/img_business.jpg";
 import imageWedding from "../assets/img_wedding.jpg";
 import { RtgMainStream, RtgMusicStream } from "../data/local/StreamRadioUrls";
-import bckRtgMain from "../assets/bck_stream_rtg.jpg";
-import bckRtgMusic from "../assets/bck_stream_music.jpg";
+import bckRtgMain from "../assets/img_player_main.jpg";
+import bckRtgMusic from "../assets/img_player_music.jpg";
 import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 

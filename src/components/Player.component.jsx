@@ -37,7 +37,7 @@ const Player = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="m-4 z-30 relative bg-white p-4 rounded-md shadow-2xl flex justify-center items-center flex-col"
+        className="m-4 z-30 relative bg-white p-4 md:p-4 xl:p-6 rounded-md shadow-2xl flex justify-center items-center flex-col"
       >
         <RiCloseCircleFill
           size="3rem"
@@ -46,7 +46,7 @@ const Player = ({
         />
         <img
           src={image}
-          className="w-72 h-44 md:w-80 md:h-52 lg:w-96 lg:h-64 rounded-md shadow-2xl object-cover"
+          className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-md shadow-2xl object-cover"
           alt=""
         />
         <h3 className="p-2 mt-4 max-w-player text-xl md:text-2xl lg:text-3xl text-center text-gray-900">
