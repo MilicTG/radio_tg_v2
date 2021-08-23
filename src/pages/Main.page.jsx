@@ -8,7 +8,7 @@ import BreakSectionTwo from "../components/BreakSectionTwo.component";
 import InfoSection from "../components/InfoSection.component";
 import ShowModal from "../components/ShowModal.component";
 import Shows from "../components/Shows.component";
-import RTGMusic from "../components/RTGMusic.component";
+import StreamsSection from "../components/StreamsSection.component";
 import ContactSection from "../components/ContactSection.component";
 import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
@@ -404,7 +404,8 @@ const Main = () => {
         close={closeShowList}
       />
       <Shows showShowList={showShowList} />
-      <RTGMusic handleOnClick={startRtgMusic} />
+      <StreamsSection handleOnClick={startRtgMusic} />
+      <BreakSectionTwo />
       <InfoSection
         id="marketing"
         {...marketYourBusinessData}
@@ -416,7 +417,6 @@ const Main = () => {
         image={imageWedding}
         order={false}
       />
-      <BreakSectionTwo />
       <ContactSection />
       <AndroidApp />
       <Footer />

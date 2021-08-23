@@ -4,7 +4,7 @@ const StreamCard = ({ image, title }) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="w-4/5 mb-6 relative cursor-pointer flex justify-center"
+        className="w-full mb-6 relative cursor-pointer flex justify-center"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

@@ -32,7 +32,7 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
         <p className="text-base font-light mb-1 text-gray-800">
           Za svakoga ponešto
         </p>
-        <ul className="h-80 md:h-screen xl:h-screen max-h-showModal w-full overflow-y-scroll">
+        <ul className="h-80 p-8 md:p-10 xl:px-16 md:h-screen xl:h-screen max-h-showModal w-full overflow-y-scroll">
           <li className="py-2 mt-4 flex justify-center flex-col items-center">
             <StreamCard image={musicStreamImage} title={"RTG Music"} />
           </li>
@@ -49,7 +49,7 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
             <StreamCard image={patriotStreamImage} title={"RTG Za dom s..."} />
           </li>
         </ul>
-        <BsChevronCompactDown className="m-2 text-gray-900 w-24" />
+        <BsChevronCompactDown className="m-2 text-gray-900 w-24 h-10" />
       </div>
     </motion.div>
   );
