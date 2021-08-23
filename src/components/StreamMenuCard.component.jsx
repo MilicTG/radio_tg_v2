@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { RiCloseCircleFill, FaPlay } from "react-icons/all";
+import { RiCloseCircleFill, BsChevronCompactDown } from "react-icons/all";
 
 import StreamCard from "./StreamCard.component";
 
@@ -21,7 +21,7 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="z-30 relative bg-white p-8 rounded-md shadow-2xl flex justify-center items-start flex-col"
+        className="w-4/5 xl:w-2/5 z-30 relative bg-white pt-8 rounded-md shadow-2xl flex justify-center items-center flex-col"
       >
         <RiCloseCircleFill
           size="3rem"
@@ -32,15 +32,24 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
         <p className="text-base font-light mb-1 text-gray-800">
           Za svakoga ponešto
         </p>
-        <ul className="h-96 xl:h-screen xl:max-h-showModal w-full overflow-y-scroll">
-          <li className="py-4">
+        <ul className="h-80 md:h-screen xl:h-screen max-h-showModal w-full overflow-y-scroll">
+          <li className="py-2 mt-4 flex justify-center flex-col items-center">
             <StreamCard image={musicStreamImage} title={"RTG Music"} />
+          </li>
+          <li className="py-2  flex justify-center flex-col items-center">
             <StreamCard image={kidsStreamImage} title={"RTG Kids"} />
+          </li>
+          <li className="py-2  flex justify-center flex-col items-center">
             <StreamCard image={framaStreamImage} title={"RTG Frama"} />
+          </li>
+          <li className="py-2 flex justify-center flex-col items-center">
             <StreamCard image={strunicaStreamImage} title={"RTG Strunica"} />
+          </li>
+          <li className="py-2  flex justify-center flex-col items-center">
             <StreamCard image={patriotStreamImage} title={"RTG Za dom s..."} />
           </li>
         </ul>
+        <BsChevronCompactDown className="m-2 text-gray-900 w-24" />
       </div>
     </motion.div>
   );
