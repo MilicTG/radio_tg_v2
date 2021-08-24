@@ -31,6 +31,15 @@ const Shows = ({ showShowList }) => {
           />
 
           <ShowCard
+            onClick={() => showShowList(showCardData[8].showId)}
+            key={showCardData[8].showId}
+            title={showCardData[8].showTitle}
+            image={ostaloImg}
+            desc={showCardData[8].showDescription}
+            airTime={showCardData[8].showAirTime}
+          />
+
+          <ShowCard
             onClick={() => showShowList(showCardData[1].showId)}
             key={showCardData[1].showId}
             title={showCardData[1].showTitle}
@@ -91,15 +100,6 @@ const Shows = ({ showShowList }) => {
             image={knjiznicaImg}
             desc={showCardData[7].showDescription}
             airTime={showCardData[7].showAirTime}
-          />
-
-          <ShowCard
-            onClick={() => showShowList(showCardData[8].showId)}
-            key={showCardData[8].showId}
-            title={showCardData[8].showTitle}
-            image={ostaloImg}
-            desc={showCardData[8].showDescription}
-            airTime={showCardData[8].showAirTime}
           />
         </div>
       </div>

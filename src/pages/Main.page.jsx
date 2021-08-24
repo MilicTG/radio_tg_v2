@@ -83,7 +83,7 @@ const Main = () => {
     showList: [],
   });
   const [restShow, setRestShow] = useState({
-    showTitle: "Ostale emisije",
+    showTitle: "",
     showList: [],
   });
 
@@ -121,6 +121,8 @@ const Main = () => {
         setZrcaloShow({ showTitle: "U dnevnom zrcalu", showList: data });
       });
   };
+
+  //TODO Forum
 
   const getStrunicaShow = async () => {
     await db
