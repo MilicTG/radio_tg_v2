@@ -74,14 +74,14 @@ const NavMenu = ({ hidden, close }) => {
         <li className="h-full w-full p-3 mt-10">
           <Link
             activeClass="active"
-            to="rtg_music"
+            to="streams"
             spy={true}
             smooth={true}
             duration={1000}
             onClick={close}
           >
             <span className="w-full bg-blue-400 px-20 py-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
-              RTG Music
+              RTG streamovi
             </span>
           </Link>
         </li>

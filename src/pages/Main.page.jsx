@@ -396,7 +396,11 @@ const Main = () => {
       <BtnPlayerMin audio={currentAudio} click={showPlayer} />
       <InfoSection {...aboutUsData} image={imageAbout} order={true} />
       <BreakSectionOne />
-      <StreamMenuCard show={isStreamListVisible} close={closeStreamList} />
+      <StreamMenuCard
+        show={isStreamListVisible}
+        close={closeStreamList}
+        startRtgMusic={startRtgMusic}
+      />
       <ShowModal
         show={isShowListVisible}
         showData={selectedShow}
@@ -404,7 +408,10 @@ const Main = () => {
         close={closeShowList}
       />
       <Shows showShowList={showShowList} />
-      <StreamsSection handleOnClick={startRtgMusic} />
+      <StreamsSection
+        startRtgMusic={startRtgMusic}
+        startMainRadio={startMainRadio}
+      />
       <BreakSectionTwo />
       <InfoSection
         id="marketing"

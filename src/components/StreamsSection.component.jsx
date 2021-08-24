@@ -17,7 +17,7 @@ import framaStreamImage from "../assets/img_stream_frama.jpg";
 import strunicaStreamImage from "../assets/img_stream_strunica.jpg";
 import patriotStreamImage from "../assets/img_stream_patriot.jpg";
 
-const StreamsSection = ({ handleOnClick }) => {
+const StreamsSection = ({ startMainRadio, startRtgMusic }) => {
   const [element, controls] = useScroll();
 
   return (
@@ -38,12 +38,48 @@ const StreamsSection = ({ handleOnClick }) => {
             Za svakoga ponešto
           </motion.p>
           <div className="w-full pt-2 pb-4 grid place-items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 xl:grid-cols-3 xl:gap-7">
-            <StreamCard image={mainStreamImage} title="RTG Live" />
-            <StreamCard image={musicStreamImage} title="RTG Music" />
-            <StreamCard image={kidsStreamImage} title="RTG Kids" />
-            <StreamCard image={framaStreamImage} title="RTG Frama" />
-            <StreamCard image={strunicaStreamImage} title="RTG Strunica" />
-            <StreamCard image={patriotStreamImage} title="RTG Za dom s..." />
+            <StreamCard
+              image={mainStreamImage}
+              title="RTG Uživo"
+              onClick={() => {
+                startMainRadio();
+              }}
+            />
+            <StreamCard
+              image={musicStreamImage}
+              title="RTG Music"
+              onClick={() => {
+                startRtgMusic();
+              }}
+            />
+            <StreamCard
+              image={kidsStreamImage}
+              title="RTG Dječji"
+              onClick={() => {
+                startRtgMusic();
+              }}
+            />
+            <StreamCard
+              image={framaStreamImage}
+              title="RTG Frama"
+              onClick={() => {
+                startRtgMusic();
+              }}
+            />
+            <StreamCard
+              image={strunicaStreamImage}
+              title="RTG Baština"
+              onClick={() => {
+                startRtgMusic();
+              }}
+            />
+            <StreamCard
+              image={patriotStreamImage}
+              title="RTG Dom"
+              onClick={() => {
+                startRtgMusic();
+              }}
+            />
           </div>
         </div>
       </div>

@@ -19,8 +19,8 @@ const BtnPlayerMin = ({ audio, click }) => {
         whileTap={{ scale: 0.9 }}
         className={
           audio.playerTitle !== ""
-            ? "fixed z-40 bottom-20 right-5 lg:bottom-44 lg:right-10 flex justify-center items-center  w-12 h-12 rounded-full bg-red-400 shadow-lg transition duration-500 ease-linear cursor-pointer"
-            : "hidden fixed bottom-20 justify-center items-center right-10 w-12 h-12 rounded-full transition duration-500 ease-linear"
+            ? "fixed z-40 bottom-28 right-5 lg:bottom-44 lg:right-10 flex justify-center items-center  w-12 h-12 rounded-full bg-red-400 shadow-lg transition duration-500 ease-linear cursor-pointer"
+            : "hidden fixed bottom-28 justify-center items-center right-10 w-12 h-12 rounded-full transition duration-500 ease-linear"
         }
       >
         <FaMusic size="1.3rem" className="text-white" />

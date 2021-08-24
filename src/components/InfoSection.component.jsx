@@ -42,7 +42,7 @@ const InfoSection = (props) => {
         </div>
         <img
           src={props.image}
-          className="h-72 lg:h-96 rounded-md shadow-2xl object-cover"
+          className="h-72 lg:h-96 mb-4 rounded-md shadow-xl object-cover"
           alt=""
         />
       </div>

@@ -9,7 +9,13 @@ import framaStreamImage from "../assets/img_stream_frama.jpg";
 import strunicaStreamImage from "../assets/img_stream_strunica.jpg";
 import patriotStreamImage from "../assets/img_stream_patriot.jpg";
 
-const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
+const StreamMenuCard = ({
+  show,
+  close,
+  isPlaying,
+  showData,
+  startRtgMusic,
+}) => {
   if (!show) {
     return null;
   }
@@ -34,19 +40,54 @@ const StreamMenuCard = ({ show, close, isPlaying, startShow, showData }) => {
         </p>
         <ul className="h-80 p-8 md:p-10 xl:px-16 md:h-screen xl:h-screen max-h-showModal w-full overflow-y-scroll">
           <li className="py-2 mt-4 flex justify-center flex-col items-center">
-            <StreamCard image={musicStreamImage} title={"RTG Music"} />
+            <StreamCard
+              image={musicStreamImage}
+              title={"RTG Music"}
+              onClick={() => {
+                startRtgMusic();
+                close();
+              }}
+            />
           </li>
           <li className="py-2  flex justify-center flex-col items-center">
-            <StreamCard image={kidsStreamImage} title={"RTG Kids"} />
+            <StreamCard
+              image={kidsStreamImage}
+              title={"RTG Dječji"}
+              onClick={() => {
+                startRtgMusic();
+                close();
+              }}
+            />
           </li>
           <li className="py-2  flex justify-center flex-col items-center">
-            <StreamCard image={framaStreamImage} title={"RTG Frama"} />
+            <StreamCard
+              image={framaStreamImage}
+              title={"RTG Frama"}
+              onClick={() => {
+                startRtgMusic();
+                close();
+              }}
+            />
           </li>
           <li className="py-2 flex justify-center flex-col items-center">
-            <StreamCard image={strunicaStreamImage} title={"RTG Strunica"} />
+            <StreamCard
+              image={strunicaStreamImage}
+              title={"RTG Baština"}
+              onClick={() => {
+                startRtgMusic();
+                close();
+              }}
+            />
           </li>
           <li className="py-2  flex justify-center flex-col items-center">
-            <StreamCard image={patriotStreamImage} title={"RTG Za dom s..."} />
+            <StreamCard
+              image={patriotStreamImage}
+              title={"RTG Dom"}
+              onClick={() => {
+                startRtgMusic();
+                close();
+              }}
+            />
           </li>
         </ul>
         <BsChevronCompactDown className="m-2 text-gray-900 w-24 h-10" />

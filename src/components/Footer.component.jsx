@@ -38,12 +38,12 @@ const Footer = () => {
               <h6 className="text-xl text-white opacity-60 pb-4">
                 Pls za stream
               </h6>
-              <p className="text-white">Radio Tomislavgrad</p>
+              <p className="text-white">RTG Uživo</p>
               <p className="text-white">RTG Music</p>
-              <p className="text-white">RTG Kids</p>
-              <p className="text-white">RTG Etno</p>
-              <p className="text-white">RTG Patriot</p>
+              <p className="text-white">RTG Dječji</p>
               <p className="text-white">RTG Frama</p>
+              <p className="text-white">RTG Baština</p>
+              <p className="text-white">RTG Dom</p>
             </div>
           </div>
         </div>
