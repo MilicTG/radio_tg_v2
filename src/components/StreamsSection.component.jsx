@@ -23,6 +23,7 @@ const StreamsSection = ({
   startRtgBastina,
   startRtgFrama,
   startRtgDjecji,
+  startRtgDomovina,
 }) => {
   const [element, controls] = useScroll();
 
@@ -83,7 +84,7 @@ const StreamsSection = ({
               image={patriotStreamImage}
               title="RTG Domovina"
               onClick={() => {
-                startRtgMusic();
+                startRtgDomovina();
               }}
             />
           </div>

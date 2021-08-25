@@ -33,12 +33,14 @@ import {
   RtgBastinaStream,
   RtgFramaStream,
   RtgDjecjiStream,
+  RtgDomovinaStream,
 } from "../data/local/StreamRadioUrls";
 import bckRtgMain from "../assets/img_player_main.jpg";
 import bckRtgMusic from "../assets/img_player_music.jpg";
 import playerImageBastina from "../assets/img_player_bastina.jpg";
 import playerImageFrama from "../assets/img_player_frama.jpg";
 import playerImageDjecji from "../assets/img_player_djecji.jpg";
+import playerImageDomovina from "../assets/img_player_domovina.jpg";
 import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 
@@ -332,6 +334,17 @@ const Main = () => {
     playAudio();
   };
 
+  const startRtgDomovina = async () => {
+    await setCurrentAudio({
+      playerImage: playerImageDomovina,
+      playerTitle: "RTG Domovina",
+      playerSubTitle: "Uvijek svoj na svome",
+      playerUrl: RtgDomovinaStream,
+    });
+    showPlayer();
+    playAudio();
+  };
+
   const handleError = () => {
     console.log(audioRef.current.error);
   };
@@ -447,6 +460,7 @@ const Main = () => {
         startRtgFrama={startRtgFrama}
         startRtgBastina={startRtgBastina}
         startRtgDjecji={startRtgDjecji}
+        startRtgDomovina={startRtgDomovina}
       />
       <ShowModal
         show={isShowListVisible}
@@ -461,6 +475,7 @@ const Main = () => {
         startRtgBastina={startRtgBastina}
         startRtgFrama={startRtgFrama}
         startRtgDjecji={startRtgDjecji}
+        startRtgDomovina={startRtgDomovina}
       />
       <BreakSectionTwo />
       <InfoSection

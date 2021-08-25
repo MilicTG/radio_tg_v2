@@ -12,12 +12,11 @@ import patriotStreamImage from "../assets/img_stream_patriot.jpg";
 const StreamMenuCard = ({
   show,
   close,
-  isPlaying,
-  showData,
   startRtgMusic,
   startRtgBastina,
   startRtgFrama,
   startRtgDjecji,
+  startRtgDomovina,
 }) => {
   if (!show) {
     return null;
@@ -87,7 +86,7 @@ const StreamMenuCard = ({
               image={patriotStreamImage}
               title={"RTG Domovina"}
               onClick={() => {
-                startRtgMusic();
+                startRtgDomovina();
                 close();
               }}
             />
