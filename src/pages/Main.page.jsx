@@ -27,9 +27,18 @@ import {
 import imageAbout from "../assets/img_about.jpg";
 import imageBusiness from "../assets/img_business.jpg";
 import imageWedding from "../assets/img_wedding.jpg";
-import { RtgMainStream, RtgMusicStream } from "../data/local/StreamRadioUrls";
+import {
+  RtgMainStream,
+  RtgMusicStream,
+  RtgBastinaStream,
+  RtgFramaStream,
+  RtgDjecjiStream,
+} from "../data/local/StreamRadioUrls";
 import bckRtgMain from "../assets/img_player_main.jpg";
 import bckRtgMusic from "../assets/img_player_music.jpg";
+import playerImageBastina from "../assets/img_player_bastina.jpg";
+import playerImageFrama from "../assets/img_player_frama.jpg";
+import playerImageDjecji from "../assets/img_player_djecji.jpg";
 import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 
@@ -290,6 +299,39 @@ const Main = () => {
     playAudio();
   };
 
+  const startRtgBastina = async () => {
+    await setCurrentAudio({
+      playerImage: playerImageBastina,
+      playerTitle: "RTG Baština",
+      playerSubTitle: "Očuvajmo tradiciju",
+      playerUrl: RtgBastinaStream,
+    });
+    showPlayer();
+    playAudio();
+  };
+
+  const startRtgFrama = async () => {
+    await setCurrentAudio({
+      playerImage: playerImageFrama,
+      playerTitle: "RTG Frama",
+      playerSubTitle: "Rastimo u Kristu",
+      playerUrl: RtgFramaStream,
+    });
+    showPlayer();
+    playAudio();
+  };
+
+  const startRtgDjecji = async () => {
+    await setCurrentAudio({
+      playerImage: playerImageDjecji,
+      playerTitle: "RTG Dječji",
+      playerSubTitle: "Za naše mališane",
+      playerUrl: RtgDjecjiStream,
+    });
+    showPlayer();
+    playAudio();
+  };
+
   const handleError = () => {
     console.log(audioRef.current.error);
   };
@@ -402,6 +444,9 @@ const Main = () => {
         show={isStreamListVisible}
         close={closeStreamList}
         startRtgMusic={startRtgMusic}
+        startRtgFrama={startRtgFrama}
+        startRtgBastina={startRtgBastina}
+        startRtgDjecji={startRtgDjecji}
       />
       <ShowModal
         show={isShowListVisible}
@@ -413,6 +458,9 @@ const Main = () => {
       <StreamsSection
         startRtgMusic={startRtgMusic}
         startMainRadio={startMainRadio}
+        startRtgBastina={startRtgBastina}
+        startRtgFrama={startRtgFrama}
+        startRtgDjecji={startRtgDjecji}
       />
       <BreakSectionTwo />
       <InfoSection

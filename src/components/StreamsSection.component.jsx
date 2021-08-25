@@ -17,7 +17,13 @@ import framaStreamImage from "../assets/img_stream_frama.jpg";
 import strunicaStreamImage from "../assets/img_stream_strunica.jpg";
 import patriotStreamImage from "../assets/img_stream_patriot.jpg";
 
-const StreamsSection = ({ startMainRadio, startRtgMusic }) => {
+const StreamsSection = ({
+  startMainRadio,
+  startRtgMusic,
+  startRtgBastina,
+  startRtgFrama,
+  startRtgDjecji,
+}) => {
   const [element, controls] = useScroll();
 
   return (
@@ -56,26 +62,26 @@ const StreamsSection = ({ startMainRadio, startRtgMusic }) => {
               image={kidsStreamImage}
               title="RTG Dječji"
               onClick={() => {
-                startRtgMusic();
+                startRtgDjecji();
               }}
             />
             <StreamCard
               image={framaStreamImage}
               title="RTG Frama"
               onClick={() => {
-                startRtgMusic();
+                startRtgFrama();
               }}
             />
             <StreamCard
               image={strunicaStreamImage}
               title="RTG Baština"
               onClick={() => {
-                startRtgMusic();
+                startRtgBastina();
               }}
             />
             <StreamCard
               image={patriotStreamImage}
-              title="RTG Dom"
+              title="RTG Domovina"
               onClick={() => {
                 startRtgMusic();
               }}

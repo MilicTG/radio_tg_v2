@@ -56,7 +56,12 @@ const Player = ({
           {subTitle}
         </p>
 
-        {title === "Radio Tomislavgrad" || title === "RTG Music" ? (
+        {title === "Radio Tomislavgrad" ||
+        title === "RTG Music" ||
+        title === "RTG Frama" ||
+        title === "RTG Baština" ||
+        title === "RTG Dječji" ||
+        title === "RTG Domovina" ? (
           <p></p>
         ) : (
           <div className="flex flex-row justify-evenly w-full mt-8">

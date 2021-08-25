@@ -15,6 +15,9 @@ const StreamMenuCard = ({
   isPlaying,
   showData,
   startRtgMusic,
+  startRtgBastina,
+  startRtgFrama,
+  startRtgDjecji,
 }) => {
   if (!show) {
     return null;
@@ -54,7 +57,7 @@ const StreamMenuCard = ({
               image={kidsStreamImage}
               title={"RTG Dječji"}
               onClick={() => {
-                startRtgMusic();
+                startRtgDjecji();
                 close();
               }}
             />
@@ -64,7 +67,7 @@ const StreamMenuCard = ({
               image={framaStreamImage}
               title={"RTG Frama"}
               onClick={() => {
-                startRtgMusic();
+                startRtgFrama();
                 close();
               }}
             />
@@ -74,7 +77,7 @@ const StreamMenuCard = ({
               image={strunicaStreamImage}
               title={"RTG Baština"}
               onClick={() => {
-                startRtgMusic();
+                startRtgBastina();
                 close();
               }}
             />
@@ -82,7 +85,7 @@ const StreamMenuCard = ({
           <li className="py-2  flex justify-center flex-col items-center">
             <StreamCard
               image={patriotStreamImage}
-              title={"RTG Dom"}
+              title={"RTG Domovina"}
               onClick={() => {
                 startRtgMusic();
                 close();
