@@ -36,7 +36,7 @@ const StreamMenuCard = ({
           onClick={close}
           className="absolute bg-white rounded-full -top-4 -right-4 text-red-500 cursor-pointer hover:text-red-600"
         />
-        <h2 className="text-3xl mb-1 text-gray-800">Naši streamovi</h2>
+        <h2 className="text-3xl mb-1 text-gray-800">Naši kanali</h2>
         <p className="text-base font-light mb-1 text-gray-800">
           Za svakoga ponešto
         </p>

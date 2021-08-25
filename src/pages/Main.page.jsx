@@ -283,7 +283,7 @@ const Main = () => {
     await setCurrentAudio({
       playerImage: bckRtgMain,
       playerTitle: "Radio Tomislavgrad",
-      playerSubTitle: "Duvanjski radio",
+      playerSubTitle: "Radio RTG uživo",
       playerUrl: RtgMainStream,
     });
     showPlayer();
@@ -305,7 +305,7 @@ const Main = () => {
     await setCurrentAudio({
       playerImage: playerImageBastina,
       playerTitle: "RTG Baština",
-      playerSubTitle: "Očuvajmo tradiciju",
+      playerSubTitle: "Čuvajmo naš indentitet",
       playerUrl: RtgBastinaStream,
     });
     showPlayer();
