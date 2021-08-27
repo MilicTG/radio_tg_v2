@@ -337,7 +337,7 @@ const Main = () => {
   const startRtgDomovina = async () => {
     await setCurrentAudio({
       playerImage: playerImageDomovina,
-      playerTitle: "RTG Domovina",
+      playerTitle: "RTG Dom",
       playerSubTitle: "Uvijek svoj na svome",
       playerUrl: RtgDomovinaStream,
     });

@@ -13,7 +13,7 @@ export const showCardData = [
     imageUrl: "../../assets/img_strunica.jpg",
     showDescription:
       "Emisija o bastini i narodnim obicajima, Nas voditelj Cipa svake srijede za vas priprema najbolje iz svijeta gange, gusala i narodnih obicaja.",
-    showAirTime: "Srijedom u 16:00",
+    showAirTime: "Srijedom u 16:30",
   },
   {
     showId: "02",
@@ -29,7 +29,7 @@ export const showCardData = [
     imageUrl: "../../assets/img_glazbaonica.jpg",
     showDescription:
       "Emisija koja kroz različite teme govori o glazbi koja se slušala i koja se sluša.",
-    showAirTime: "Utorkom u 16:00",
+    showAirTime: "Utorkom u 16:30",
   },
   {
     showId: "04",
@@ -37,7 +37,7 @@ export const showCardData = [
     imageUrl: "../../assets/img_razgovori.jpg",
     showDescription:
       "Emisija koja je to u pravom smislu riječi. U njoj o svome životu pričaju Duvanjke i Duvnjaci, koji žive ovdje ili negdje u svijetu.",
-    showAirTime: "Ponedjeljkom u 16:00",
+    showAirTime: "Ponedjeljkom u 16:30",
   },
   {
     showId: "05",
@@ -45,7 +45,7 @@ export const showCardData = [
     imageUrl: "../../assets/img_obiteljski.jpg",
     showDescription:
       "Emisije iz arhiva Radija Tomislavgrad. Kroz zvučne zapise listamo stranice obiteljskih uspomena.",
-    showAirTime: "Petkom u 16:00",
+    showAirTime: "Subotom u 16:30",
   },
   {
     showId: "06",
@@ -53,7 +53,7 @@ export const showCardData = [
     imageUrl: "../../assets/img_slusam.jpg",
     showDescription:
       "Edukativna radio slagalica. Emisija o kulturi, znanosti, umjetnosti, ljudima, događajima i pojavama.",
-    showAirTime: "Ponedjeljkom u 16:00",
+    showAirTime: "Ponedjeljkom u 16:30",
   },
   {
     showId: "07",

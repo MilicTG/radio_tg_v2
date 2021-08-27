@@ -18,6 +18,13 @@ const BtnFeature = ({ title, onClick }) => {
         className="bg-blue-400 p-4 mt-20 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all"
       >
         {title}
+        <a
+          href="https://play.google.com/store/apps/details?id=com.milictg.radiotg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          play
+        </a>
       </motion.button>
     </AnimatePresence>
   );

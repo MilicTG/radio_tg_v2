@@ -34,7 +34,7 @@ const StreamsSection = ({
     >
       <div className="max-w-con w-full flex justify-start items-center z-10">
         <div className="py-20 w-full">
-          <SectionTitle title="RTG streamovi" />
+          <SectionTitle title="RTG kanali" />
           <motion.p
             variants={revelTextFromLeft}
             initial="hidden"
@@ -82,7 +82,7 @@ const StreamsSection = ({
             />
             <StreamCard
               image={patriotStreamImage}
-              title="RTG Domovina"
+              title="RTG Dom"
               onClick={() => {
                 startRtgDomovina();
               }}

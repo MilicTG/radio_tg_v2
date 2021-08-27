@@ -84,7 +84,7 @@ const StreamMenuCard = ({
           <li className="py-2  flex justify-center flex-col items-center">
             <StreamCard
               image={patriotStreamImage}
-              title={"RTG Domovina"}
+              title={"RTG Dom"}
               onClick={() => {
                 startRtgDomovina();
                 close();

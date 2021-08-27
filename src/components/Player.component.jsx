@@ -61,7 +61,7 @@ const Player = ({
         title === "RTG Frama" ||
         title === "RTG Baština" ||
         title === "RTG Dječji" ||
-        title === "RTG Domovina" ? (
+        title === "RTG Dom" ? (
           <p></p>
         ) : (
           <div className="flex flex-row justify-evenly w-full mt-8">

@@ -81,7 +81,7 @@ const NavMenu = ({ hidden, close }) => {
             onClick={close}
           >
             <span className="w-full bg-blue-400 px-20 py-4 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all">
-              RTG streamovi
+              RTG programi
             </span>
           </Link>
         </li>

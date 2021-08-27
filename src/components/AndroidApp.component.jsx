@@ -9,6 +9,10 @@ import {
 
 import BtnFeature from "./BtnFeature.component";
 
+const goToGooglePlayStore = () => {
+  console.log("Go to Google play");
+};
+
 const AndroidApp = () => {
   const [element, controls] = useScroll();
 
@@ -51,15 +55,14 @@ const AndroidApp = () => {
             ref={element}
             className="text-white"
           >
-            Molim vrijednu pcelicu da osmisli nesto genijalno i ovde. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et metus
-            dignissim, rhoncus purus at, varius nisl. Nullam ac viverra nisl.
-            Mauris tempus lectus ut odio porttitor, quis lacinia felis
-            sollicitudin. Suspendisse mauris enim, posuere ac justo eget,
-            elementum vulputate nibh. Nulla sit amet dolor in lacus porttitor
-            ullamcorper vel sit amet risus.
+            Preuzmite našu aplikaciju potpuno besplatno s Google play store-a.
+            Nadoknadite propuštene emisije, slušajte RTG Music te još mnogo
+            drugog sadržaja.
           </motion.p>
-          <BtnFeature title="Preuzmite s Google play" />
+          <BtnFeature
+            title="Preuzmite s Google "
+            onClick={goToGooglePlayStore}
+          />
         </div>
       </div>
     </section>
