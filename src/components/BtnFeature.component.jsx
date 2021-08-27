@@ -1,11 +1,16 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+const url = "https://play.google.com/store/apps/details?id=com.milictg.radiotg";
 
-const BtnFeature = ({ title, onClick }) => {
+const BtnFeature = ({ title }) => {
+  function goToUrl() {
+    window.open(url, "_blank");
+  }
+
   return (
     <AnimatePresence>
       <motion.button
-        onClick={onClick}
+        onClick={goToUrl}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -18,13 +23,6 @@ const BtnFeature = ({ title, onClick }) => {
         className="bg-blue-400 p-4 mt-20 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-all"
       >
         {title}
-        <a
-          href="https://play.google.com/store/apps/details?id=com.milictg.radiotg"
-          target="_blank"
-          rel="noreferrer"
-        >
-          play
-        </a>
       </motion.button>
     </AnimatePresence>
   );

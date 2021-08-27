@@ -9,10 +9,6 @@ import {
 
 import BtnFeature from "./BtnFeature.component";
 
-const goToGooglePlayStore = () => {
-  console.log("Go to Google play");
-};
-
 const AndroidApp = () => {
   const [element, controls] = useScroll();
 
@@ -59,10 +55,7 @@ const AndroidApp = () => {
             Nadoknadite propuštene emisije, slušajte RTG Music te još mnogo
             drugog sadržaja.
           </motion.p>
-          <BtnFeature
-            title="Preuzmite s Google "
-            onClick={goToGooglePlayStore}
-          />
+          <BtnFeature title="Preuzmite s Google play" />
         </div>
       </div>
     </section>

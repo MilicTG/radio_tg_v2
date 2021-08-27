@@ -34,16 +34,52 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-row py-8">
-            <div className="px-0 xl:px-4">
+            <div className="px-0 xl:px-4 flex flex-col">
               <h6 className="text-xl text-white opacity-60 pb-4">
                 Pls za stream
               </h6>
-              <p className="text-white">RTG Uživo</p>
-              <p className="text-white">RTG Music</p>
-              <p className="text-white">RTG Dječji</p>
-              <p className="text-white">RTG Frama</p>
-              <p className="text-white">RTG Baština</p>
-              <p className="text-white">RTG Dom</p>
+              <a
+                href="http://radiotg.com/pls/rtg_live.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Uživo
+              </a>
+              <a
+                href="http://radiotg.com/pls/rtg_music.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Music
+              </a>
+              <a
+                href="http://radiotg.com/pls/rtg_djecji.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Dječji
+              </a>
+              <a
+                href="http://radiotg.com/pls/rtg_frama.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Frama
+              </a>
+              <a
+                href="http://radiotg.com/pls/rtg_bastina.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Baština
+              </a>
+              <a
+                href="http://radiotg.com/pls/rtg_dom.pls"
+                className="text-white hover:text-blue-400"
+                download
+              >
+                RTG Dom
+              </a>
             </div>
           </div>
         </div>
