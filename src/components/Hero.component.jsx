@@ -11,7 +11,6 @@ const Hero = ({ startMainStream, openStreamMenu }) => {
   return (
     <header className="h-screen">
       <div className="h-screen bg-hero bg-fixed bg-cover bg-no-repeat bg-center flex justify-center items-center">
-        <div className="absolute inset-0 bg-gray-700 opacity-60" />
         <div className="w-full max-w-con flex h-full flex-col justify-center items-center">
           <div className="my-28 z-10 flex justify-center flex-col items-center">
             <motion.h1

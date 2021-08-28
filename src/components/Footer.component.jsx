@@ -91,9 +91,14 @@ const Footer = () => {
             <p className="text-xs text-blue-50">
               &copy; Radio Tomislavgrad {new Date().getFullYear()}
             </p>
-            <p className="text-xs text-blue-50">
-              Designed and developed by Ivan Milic
-            </p>
+            <div>
+              <p className="text-xs text-blue-50">
+                Designed and developed by Ivan Milic
+              </p>
+              <p className="text-xs text-blue-50">
+                Slike preuzete s Fotografijom kroz Tomislavgrad.
+              </p>
+            </div>
           </div>
         </div>
       </div>

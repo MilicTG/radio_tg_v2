@@ -93,7 +93,7 @@ const Main = () => {
     showTitle: "",
     showList: [],
   });
-  const [restShow, setRestShow] = useState({
+  const [forumShow, setForumShow] = useState({
     showTitle: "",
     showList: [],
   });
@@ -113,6 +113,7 @@ const Main = () => {
 
   const getFirebaseData = () => {
     getZrcaloShow();
+    getForumShow();
     getStrunicaShow();
     getGlazbaonicaShow();
     getPetmilShow();
@@ -133,7 +134,16 @@ const Main = () => {
       });
   };
 
-  //TODO Forum
+  const getForumShow = async () => {
+    await db
+      .collection("radioShow/09forum/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setZrcaloShow({ showTitle: "RTG Forum", showList: data });
+      });
+  };
 
   const getStrunicaShow = async () => {
     await db
@@ -242,8 +252,18 @@ const Main = () => {
   };
 
   const playAudio = () => {
-    audioRef.current.play();
-    setIsPlaying(true);
+    const audioPromise = audioRef.current.play();
+
+    if (audioPromise !== undefined) {
+      audioPromise
+        .then((_) => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          // catch dom exception
+          console.info(err);
+        });
+    }
   };
 
   const pauseAudio = () => {
@@ -345,8 +365,27 @@ const Main = () => {
     playAudio();
   };
 
+  const restartPlayer = () => {
+    let currentAudioStream = currentAudio;
+
+    pauseAudio();
+    setCurrentAudio({
+      playerUrl: null,
+      currentPlayingTime: 0,
+      durationOfFile: 0,
+    });
+    setCurrentAudio({
+      playerUrl: currentAudioStream.playerUrl,
+    });
+    playAudio();
+  };
+
   const handleError = () => {
     console.log(audioRef.current.error);
+
+    if (audioRef.current.error.code === 2 || 3) {
+      restartPlayer();
+    }
   };
 
   const sendShowData = async (id) => {
@@ -369,7 +408,7 @@ const Main = () => {
       case "07":
         return await setSelectedShow(knjiznicaShow);
       case "08":
-        return await setSelectedShow(restShow);
+        return await setSelectedShow(forumShow);
       default:
         return [];
     }
