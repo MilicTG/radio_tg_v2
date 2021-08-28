@@ -141,7 +141,7 @@ const Main = () => {
       .get()
       .then((querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => doc.data());
-        setZrcaloShow({ showTitle: "RTG Forum", showList: data });
+        setForumShow({ showTitle: "RTG Forum", showList: data });
       });
   };
 
@@ -389,7 +389,6 @@ const Main = () => {
   };
 
   const sendShowData = async (id) => {
-    console.log(id);
     switch (id) {
       case "00":
         return await setSelectedShow(zrcaloShow);
