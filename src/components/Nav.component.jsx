@@ -50,7 +50,7 @@ const Nav = () => {
         />
 
         <div className="z-30 hidden lg:block">
-          <ui
+          <div
             className={
               navbarBg
                 ? "flex items-center list-none transition duration-500 ease-in-out text-center text-gray-800"
@@ -114,7 +114,7 @@ const Nav = () => {
                 </span>
               </Link>
             </li>
-          </ui>
+          </div>
         </div>
         <div className="lg:hidden p-0.5 bg-white rounded-full">
           <Hamburger

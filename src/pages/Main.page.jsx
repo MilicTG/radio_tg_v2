@@ -104,24 +104,8 @@ const Main = () => {
   //streamList
   const [isStreamListVisible, setIsStreamListVisible] = useState(false);
 
-  useEffect(() => {
-    getFirebaseData();
-  }, []);
-
   //audioRef
   const audioRef = useRef(null);
-
-  const getFirebaseData = () => {
-    getZrcaloShow();
-    getForumShow();
-    getStrunicaShow();
-    getGlazbaonicaShow();
-    getPetmilShow();
-    getObiteljskiShow();
-    getRazgovoriShow();
-    getSlusamShow();
-    getKnjiznicaShow();
-  };
 
   const getZrcaloShow = async () => {
     await db
@@ -377,7 +361,9 @@ const Main = () => {
     setCurrentAudio({
       playerUrl: currentAudioStream.playerUrl,
     });
-    playAudio();
+    if (currentAudio.playerTitle !== "") {
+      playAudio();
+    }
   };
 
   const handleError = () => {
@@ -471,6 +457,18 @@ const Main = () => {
   };
 
   window.addEventListener("scroll", showReturnToTopBtn);
+
+  useEffect(() => {
+    getZrcaloShow();
+    getForumShow();
+    getStrunicaShow();
+    getGlazbaonicaShow();
+    getPetmilShow();
+    getObiteljskiShow();
+    getRazgovoriShow();
+    getSlusamShow();
+    getKnjiznicaShow();
+  }, []);
 
   return (
     <>

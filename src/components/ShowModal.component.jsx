@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { RiCloseCircleFill, FaPlay } from "react-icons/all";
 
-const ShowModal = ({ show, close, isPlaying, startShow, showData }) => {
+const ShowModal = ({ show, close, startShow, showData }) => {
   if (!show) {
     return null;
   }
@@ -28,7 +28,7 @@ const ShowModal = ({ show, close, isPlaying, startShow, showData }) => {
           {showData.showList.map((data, i) => {
             return (
               <li
-                key={data.id}
+                key={i}
                 className="w-full  my-2 border-b border-solid border-gray-900 border-opacity-10 flex flex-row items-center justify-between"
               >
                 <div className="flex flex-col py-3">
