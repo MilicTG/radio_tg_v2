@@ -14,9 +14,10 @@ import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
 import BtnPlayerMin from "../components/BtnPlayerMin.component";
+import { getFirestore, collection, query, getDocs } from "firebase/firestore";
 
 //firebase
-import { db } from "../firebase";
+import { firebaseApp } from "../firebase";
 
 //local data
 import {
@@ -45,6 +46,9 @@ import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 
 const Main = () => {
+  const db = getFirestore(firebaseApp);
+  const zrcaloQuery = query(collection(db, "radioShow/01zrcalo/showEntity"));
+
   const [returnToTopBtn, setReturnToTop] = useState(false);
 
   //for player
@@ -61,19 +65,10 @@ const Main = () => {
 
   //getShows
   const getZrcalo = async () => {
-    console.log(db);
-    await db
-      .collection("radioShow/01zrcalo/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        let arr = [];
-        querySnapshot.docs.map((doc) => arr.push(doc.data()));
-        setZrcaloShow({
-          showTitle: "U dnevnom zrcalu",
-          showList: arr,
-        });
-      });
+    const zrcaloSnapshot = await getDocs(zrcaloQuery);
+    zrcaloSnapshot.forEach((doc) => {
+      console.log(doc);
+    });
   };
 
   //shows
