@@ -34,7 +34,7 @@ const StreamsSection = ({
     >
       <div className="max-w-con w-full flex justify-start items-center z-10">
         <div className="py-20 w-full">
-          <SectionTitle title="RTG kanali" />
+          <SectionTitle title="RTG programi" />
           <motion.p
             variants={revelTextFromLeft}
             initial="hidden"

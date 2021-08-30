@@ -15,8 +15,8 @@ import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
 import BtnPlayerMin from "../components/BtnPlayerMin.component";
 
-//online data
-import { db } from "../data/online/FirebaseAPI";
+//firebase
+import { db } from "../firebase";
 
 //local data
 import {
@@ -59,12 +59,31 @@ const Main = () => {
     durationOfFile: 0,
   });
 
+  //getShows
+  const getZrcalo = async () => {
+    console.log(db);
+    await db
+      .collection("radioShow/01zrcalo/showEntity")
+      .orderBy("stamp", "desc")
+      .get()
+      .then((querySnapshot) => {
+        let arr = [];
+        querySnapshot.docs.map((doc) => arr.push(doc.data()));
+        setZrcaloShow({
+          showTitle: "U dnevnom zrcalu",
+          showList: arr,
+        });
+      });
+  };
+
   //shows
   const [selectedShow, setSelectedShow] = useState();
+
   const [zrcaloShow, setZrcaloShow] = useState({
     showTitle: "",
     showList: [],
   });
+
   const [strunicaShow, setStrunicaShow] = useState({
     showTitle: "",
     showList: [],
@@ -106,126 +125,6 @@ const Main = () => {
 
   //audioRef
   const audioRef = useRef(null);
-
-  const getZrcaloShow = async () => {
-    await db
-      .collection("radioShow/01zrcalo/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setZrcaloShow({ showTitle: "U dnevnom zrcalu", showList: data });
-      });
-  };
-
-  const getForumShow = async () => {
-    await db
-      .collection("radioShow/09forum/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setForumShow({ showTitle: "RTG Forum", showList: data });
-      });
-  };
-
-  const getStrunicaShow = async () => {
-    await db
-      .collection("radioShow/02strunica/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setStrunicaShow({
-          showTitle: "Šarenica, strunica, tkanica",
-          showList: data,
-        });
-      });
-  };
-
-  const getGlazbaonicaShow = async () => {
-    await db
-      .collection("radioShow/03glazbaonica/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setGlazbaonicaShow({
-          showTitle: "Glazbaonica",
-          showList: data,
-        });
-      });
-  };
-
-  const getPetmilShow = async () => {
-    await db
-      .collection("radioShow/04petmil/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setPetmilShow({
-          showTitle: "Klub Pet Mil",
-          showList: data,
-        });
-      });
-  };
-
-  const getObiteljskiShow = async () => {
-    await db
-      .collection("radioShow/05obiteljski/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setObiteljskiShow({
-          showTitle: "Obiteljski album",
-          showList: data,
-        });
-      });
-  };
-
-  const getRazgovoriShow = async () => {
-    await db
-      .collection("radioShow/06razgovori/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setRazgovoriShow({
-          showTitle: "Razgovori ugodni",
-          showList: data,
-        });
-      });
-  };
-
-  const getSlusamShow = async () => {
-    await db
-      .collection("radioShow/07slusam/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setSlusamShow({
-          showTitle: "Slušam, dakle učim!",
-          showList: data,
-        });
-      });
-  };
-
-  const getKnjiznicaShow = async () => {
-    await db
-      .collection("radioShow/08knjiznica/showEntity")
-      .orderBy("stamp", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setKnjiznicaShow({
-          showTitle: "Radio knjižnica",
-          showList: data,
-        });
-      });
-  };
 
   const showReturnToTopBtn = () => {
     if (window.scrollY >= 130) {
@@ -459,15 +358,7 @@ const Main = () => {
   window.addEventListener("scroll", showReturnToTopBtn);
 
   useEffect(() => {
-    getZrcaloShow();
-    getForumShow();
-    getStrunicaShow();
-    getGlazbaonicaShow();
-    getPetmilShow();
-    getObiteljskiShow();
-    getRazgovoriShow();
-    getSlusamShow();
-    getKnjiznicaShow();
+    getZrcalo();
   }, []);
 
   return (
@@ -529,7 +420,7 @@ const Main = () => {
       <AndroidApp />
       <Footer />
       <audio
-        buffered
+        buffered="true"
         ref={audioRef}
         src={currentAudio.playerUrl}
         onTimeUpdate={timeUpdateHandler}
