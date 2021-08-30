@@ -20,6 +20,7 @@ const ShowModal = ({ show, close, startShow, showData }) => {
           onClick={close}
           className="absolute bg-white rounded-full -top-4 -right-4 text-red-500 cursor-pointer hover:text-red-600"
         />
+
         <h3 className="py-4 text-xl md:text-2xl lg:text-3xl text-gray-900">
           {showData.showTitle}
         </h3>

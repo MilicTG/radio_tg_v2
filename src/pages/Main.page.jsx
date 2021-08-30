@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { store } from "react-notifications-component";
 import Hero from "../components/Hero.component";
@@ -14,7 +14,13 @@ import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
 import BtnPlayerMin from "../components/BtnPlayerMin.component";
-import { getFirestore, collection, query, getDocs } from "firebase/firestore";
+import {
+  query,
+  getFirestore,
+  collection,
+  getDocs,
+  orderBy,
+} from "firebase/firestore/lite";
 
 //firebase
 import { firebaseApp } from "../firebase";
@@ -47,7 +53,6 @@ import StreamMenuCard from "../components/StreamMenuCard.component";
 
 const Main = () => {
   const db = getFirestore(firebaseApp);
-  const zrcaloQuery = query(collection(db, "radioShow/01zrcalo/showEntity"));
 
   const [returnToTopBtn, setReturnToTop] = useState(false);
 
@@ -65,10 +70,26 @@ const Main = () => {
 
   //getShows
   const getZrcalo = async () => {
+    const zrcaloQuery = query(
+      collection(db, "radioShow/01zrcalo/showEntity"),
+      orderBy("stamp", "desc")
+    );
     const zrcaloSnapshot = await getDocs(zrcaloQuery);
-    zrcaloSnapshot.forEach((doc) => {
-      console.log(doc);
+    const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
+
+    setZrcaloShow({
+      showTitle: "U dnevnom zrcalu",
+      showList: zrcaloGetList,
     });
+    setSelectedShow(zrcaloShow);
+  };
+
+  const loadZrcalo = () => {
+    if (zrcaloShow.showTitle === "") {
+      getZrcalo();
+    } else {
+      setSelectedShow(zrcaloShow);
+    }
   };
 
   //shows
@@ -271,7 +292,7 @@ const Main = () => {
   const sendShowData = async (id) => {
     switch (id) {
       case "00":
-        return await setSelectedShow(zrcaloShow);
+        return loadZrcalo();
       case "01":
         return await setSelectedShow(strunicaShow);
       case "02":
@@ -313,9 +334,12 @@ const Main = () => {
     playAudio();
   };
 
-  const showShowList = (id) => {
-    sendShowData(id);
-    setIsShowListVisible(true);
+  const showShowList = async (id) => {
+    await sendShowData(id).then(
+      selectedShow !== undefined
+        ? setIsShowListVisible(true)
+        : setIsShowListVisible(false)
+    );
   };
 
   const closeShowList = () => {
@@ -351,10 +375,6 @@ const Main = () => {
   };
 
   window.addEventListener("scroll", showReturnToTopBtn);
-
-  useEffect(() => {
-    getZrcalo();
-  }, []);
 
   return (
     <>
