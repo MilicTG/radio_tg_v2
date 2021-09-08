@@ -27,14 +27,14 @@ const BreakSectionTwo = () => {
           <GoRadioTower size="4rem" className="text-white" />
           <h5 className="text-2xl py-3">103.3 Mhz</h5>
           <div className="w-20 h-1 rounded bg-white" />
-          <p className="pt-2">Opcina Tomislavgrad</p>
+          <p className="pt-2">Općina Tomislavgrad</p>
         </div>
 
         <div className="p-4 h-56 w-72 text-white flex-col rounded-xl flex justify-center items-center">
           <SiAudiomack size="4rem" className="text-white" />
           <h5 className="text-2xl py-3">95.1 Mhz</h5>
           <div className="w-20 h-1 rounded bg-white" />
-          <p className="pt-2">Busko blato i okolica</p>
+          <p className="pt-2">Buško blato i okolica</p>
         </div>
       </motion.div>
     </section>

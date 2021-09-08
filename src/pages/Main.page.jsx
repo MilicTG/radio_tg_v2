@@ -69,6 +69,8 @@ const Main = () => {
   });
 
   //getShows
+
+  // ZRCALO
   const getZrcalo = async () => {
     const zrcaloQuery = query(
       collection(db, "radioShow/01zrcalo/showEntity"),
@@ -89,6 +91,54 @@ const Main = () => {
       getZrcalo();
     } else {
       setSelectedShow(zrcaloShow);
+    }
+  };
+
+  //FORUM
+  const getForum = async () => {
+    const forumQuery = query(
+      collection(db, "radioShow/09forum/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const forumSnapshot = await getDocs(forumQuery);
+    const forumGetList = forumSnapshot.docs.map((doc) => doc.data());
+
+    setForumShow({
+      showTitle: "RTG Forum",
+      showList: forumGetList,
+    });
+    setSelectedShow(forumShow);
+  };
+
+  const loadForum = () => {
+    if (forumShow.showTitle === "") {
+      getForum();
+    } else {
+      setSelectedShow(forumShow);
+    }
+  };
+
+  //Strunica
+  const getStrunica = async () => {
+    const strunicaQuery = query(
+      collection(db, "radioShow/02strunica/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const strunicaSnapshot = await getDocs(strunicaQuery);
+    const strunicaGetList = strunicaSnapshot.docs.map((doc) => doc.data());
+
+    setForumShow({
+      showTitle: "RTG Forum",
+      showList: strunicaGetList,
+    });
+    setSelectedShow(strunicaShow);
+  };
+
+  const loadStrunica = () => {
+    if (strunicaShow.showTitle === "") {
+      getForum();
+    } else {
+      setSelectedShow(strunicaShow);
     }
   };
 
