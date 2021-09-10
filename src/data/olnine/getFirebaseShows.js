@@ -12,14 +12,16 @@ import { firebaseApp } from "../../firebase";
 const db = getFirestore(firebaseApp);
 
 export const getZrcalo = async () => {
+  const emptyList = [];
   const zrcaloQuery = query(
     collection(db, "radioShow/01zrcalo/showEntity"),
     orderBy("stamp", "desc")
   );
   const zrcaloSnapshot = await getDocs(zrcaloQuery);
   const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
+  emptyList.push(zrcaloGetList);
 
-  return new Promise(zrcaloGetList);
+  return new Promise(emptyList);
 };
 
 //FORUM

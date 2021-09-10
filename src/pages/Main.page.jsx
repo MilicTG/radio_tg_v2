@@ -41,8 +41,16 @@ import playerImageDomovina from "../assets/img_player_domovina.jpg";
 import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 
-//online data
-import { getZrcalo } from "../data/olnine/getFirebaseShows";
+import {
+  query,
+  getFirestore,
+  collection,
+  getDocs,
+  orderBy,
+} from "firebase/firestore/lite";
+
+import { firebaseApp } from "../firebase";
+const db = getFirestore(firebaseApp);
 
 const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
@@ -58,20 +66,6 @@ const Main = () => {
     currentPlayingTime: 0,
     durationOfFile: 0,
   });
-
-  const loadZrcalo = async () => {
-    const zrcaloList = {
-      showTitle: "U dnevnom zrcalu",
-      showList: getZrcalo,
-    };
-
-    await console.log(zrcaloList);
-    // if (zrcaloShow.showTitle === "") {
-    //   setZrcaloShow(zrcaloList);
-    // } else {
-    //   setSelectedShow(zrcaloShow);
-    // }
-  };
 
   //shows
   const [selectedShow, setSelectedShow] = useState();
@@ -129,6 +123,27 @@ const Main = () => {
     } else {
       setReturnToTop(false);
     }
+  };
+
+  //load from firebase
+  //zrcalo
+  const loadZrcalo = async () => {
+    const zrcaloTempList = [];
+    const zrcaloQuery = query(
+      collection(db, "radioShow/01zrcalo/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    if (zrcaloShow.showTitle === "") {
+      const zrcaloSnapshot = await getDocs(zrcaloQuery);
+      const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
+      zrcaloTempList.push(zrcaloGetList);
+    }
+
+    setZrcaloShow({
+      showTitle: "U dnevnom zrcalu",
+      showList: zrcaloTempList,
+    });
+    setSelectedShow(zrcaloShow);
   };
 
   const playAudio = () => {
