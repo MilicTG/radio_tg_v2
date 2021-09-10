@@ -14,16 +14,6 @@ import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
 import BtnPlayerMin from "../components/BtnPlayerMin.component";
-import {
-  query,
-  getFirestore,
-  collection,
-  getDocs,
-  orderBy,
-} from "firebase/firestore/lite";
-
-//firebase
-import { firebaseApp } from "../firebase";
 
 //local data
 import {
@@ -51,9 +41,10 @@ import playerImageDomovina from "../assets/img_player_domovina.jpg";
 import imageDef from "../assets/img_def_player.jpg";
 import StreamMenuCard from "../components/StreamMenuCard.component";
 
-const Main = () => {
-  const db = getFirestore(firebaseApp);
+//online data
+import { getZrcalo } from "../data/olnine/getFirebaseShows";
 
+const Main = () => {
   const [returnToTopBtn, setReturnToTop] = useState(false);
 
   //for player
@@ -68,78 +59,18 @@ const Main = () => {
     durationOfFile: 0,
   });
 
-  //getShows
-
-  // ZRCALO
-  const getZrcalo = async () => {
-    const zrcaloQuery = query(
-      collection(db, "radioShow/01zrcalo/showEntity"),
-      orderBy("stamp", "desc")
-    );
-    const zrcaloSnapshot = await getDocs(zrcaloQuery);
-    const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
-
-    setZrcaloShow({
+  const loadZrcalo = async () => {
+    const zrcaloList = {
       showTitle: "U dnevnom zrcalu",
-      showList: zrcaloGetList,
-    });
-    setSelectedShow(zrcaloShow);
-  };
+      showList: getZrcalo,
+    };
 
-  const loadZrcalo = () => {
-    if (zrcaloShow.showTitle === "") {
-      getZrcalo();
-    } else {
-      setSelectedShow(zrcaloShow);
-    }
-  };
-
-  //FORUM
-  const getForum = async () => {
-    const forumQuery = query(
-      collection(db, "radioShow/09forum/showEntity"),
-      orderBy("stamp", "desc")
-    );
-    const forumSnapshot = await getDocs(forumQuery);
-    const forumGetList = forumSnapshot.docs.map((doc) => doc.data());
-
-    setForumShow({
-      showTitle: "RTG Forum",
-      showList: forumGetList,
-    });
-    setSelectedShow(forumShow);
-  };
-
-  const loadForum = () => {
-    if (forumShow.showTitle === "") {
-      getForum();
-    } else {
-      setSelectedShow(forumShow);
-    }
-  };
-
-  //Strunica
-  const getStrunica = async () => {
-    const strunicaQuery = query(
-      collection(db, "radioShow/02strunica/showEntity"),
-      orderBy("stamp", "desc")
-    );
-    const strunicaSnapshot = await getDocs(strunicaQuery);
-    const strunicaGetList = strunicaSnapshot.docs.map((doc) => doc.data());
-
-    setForumShow({
-      showTitle: "RTG Forum",
-      showList: strunicaGetList,
-    });
-    setSelectedShow(strunicaShow);
-  };
-
-  const loadStrunica = () => {
-    if (strunicaShow.showTitle === "") {
-      getForum();
-    } else {
-      setSelectedShow(strunicaShow);
-    }
+    await console.log(zrcaloList);
+    // if (zrcaloShow.showTitle === "") {
+    //   setZrcaloShow(zrcaloList);
+    // } else {
+    //   setSelectedShow(zrcaloShow);
+    // }
   };
 
   //shows
