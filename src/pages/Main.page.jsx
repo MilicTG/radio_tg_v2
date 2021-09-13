@@ -128,22 +128,138 @@ const Main = () => {
   //load from firebase
   //zrcalo
   const loadZrcalo = async () => {
-    const zrcaloTempList = [];
     const zrcaloQuery = query(
       collection(db, "radioShow/01zrcalo/showEntity"),
       orderBy("stamp", "desc")
     );
-    if (zrcaloShow.showTitle === "") {
-      const zrcaloSnapshot = await getDocs(zrcaloQuery);
-      const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
-      zrcaloTempList.push(zrcaloGetList);
-    }
+    const zrcaloSnapshot = await getDocs(zrcaloQuery);
+    const zrcaloGetList = zrcaloSnapshot.docs.map((doc) => doc.data());
 
     setZrcaloShow({
-      showTitle: "U dnevnom zrcalu",
-      showList: zrcaloTempList,
+      showTitle: "Dnevno zrcalo",
+      showList: zrcaloGetList,
     });
     setSelectedShow(zrcaloShow);
+  };
+
+  const loadForum = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/09forum/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setForumShow({
+      showTitle: "RTG Forum",
+      showList: showGetList,
+    });
+    setSelectedShow(forumShow);
+  };
+
+  const loadStrunica = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/02strunica/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setStrunicaShow({
+      showTitle: "Šarenica, strunica, tkanica",
+      showList: showGetList,
+    });
+    setSelectedShow(strunicaShow);
+  };
+
+  const loadPetmil = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/04petmil/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setPetmilShow({
+      showTitle: "Klub Pet Mil",
+      showList: showGetList,
+    });
+    setSelectedShow(petmilShow);
+  };
+
+  const loadGlazbaonica = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/03glazbaonica/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setGlazbaonicaShow({
+      showTitle: "Glazbaonica",
+      showList: showGetList,
+    });
+    setSelectedShow(glazbaonicaShow);
+  };
+
+  const loadRazgovori = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/06razgovori/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setRazgovoriShow({
+      showTitle: "Razgovori ugodni",
+      showList: showGetList,
+    });
+    setSelectedShow(razgovoriShow);
+  };
+
+  const loadObiteljski = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/05obiteljski/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setObiteljskiShow({
+      showTitle: "Obiteljski album",
+      showList: showGetList,
+    });
+    setSelectedShow(obiteljskiShow);
+  };
+
+  const loadSlusam = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/07slusam/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setSlusamShow({
+      showTitle: "Slušam, dakle učim!",
+      showList: showGetList,
+    });
+    setSelectedShow(slusamShow);
+  };
+
+  const loadKnjiznica = async () => {
+    const showQuery = query(
+      collection(db, "radioShow/08knjiznica/showEntity"),
+      orderBy("stamp", "desc")
+    );
+    const showSnapshot = await getDocs(showQuery);
+    const showGetList = showSnapshot.docs.map((doc) => doc.data());
+
+    setKnjiznicaShow({
+      showTitle: "Radio knjižnica",
+      showList: showGetList,
+    });
+    setSelectedShow(knjiznicaShow);
   };
 
   const playAudio = () => {
@@ -288,23 +404,23 @@ const Main = () => {
   const sendShowData = async (id) => {
     switch (id) {
       case "00":
-        return loadZrcalo();
+        return await loadZrcalo();
       case "01":
-        return await setSelectedShow(strunicaShow);
+        return await loadStrunica();
       case "02":
-        return await setSelectedShow(petmilShow);
+        return await loadPetmil();
       case "03":
-        return await setSelectedShow(glazbaonicaShow);
+        return await loadGlazbaonica();
       case "04":
-        return await setSelectedShow(razgovoriShow);
+        return await loadRazgovori();
       case "05":
-        return await setSelectedShow(obiteljskiShow);
+        return await loadObiteljski();
       case "06":
-        return await setSelectedShow(slusamShow);
+        return await loadSlusam();
       case "07":
-        return await setSelectedShow(knjiznicaShow);
+        return await loadKnjiznica();
       case "08":
-        return await setSelectedShow(forumShow);
+        return await loadForum();
       default:
         return [];
     }
