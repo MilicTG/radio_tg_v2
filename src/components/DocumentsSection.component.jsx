@@ -14,10 +14,11 @@ const StreamsSection = () => {
           <div className="w-full h-72 pt-2 pb-4 flex flex-col">
             <div className="w-full pt-2 pb-4 flex flex-col md:flex-row md:justify-between items-center border-b border-gray-800">
               <h4 className="text-xl text-gray-900">
-                Natječaj za direktora JP Radio Tomislavgrad
+                Javni natječaj za izbor i imenovanje direktora JP ”Radio
+                Tomislavgrad d.o.o.“ Tomislavgrad
               </h4>
               <a
-                href="http://radiotg.com/pls/rtg_dom.pls"
+                href="http://radiotg.com/docs/JAVNI_NATJECAJ.pdf"
                 className="text-blue-400 hover:text-blue-800"
                 download
               >
