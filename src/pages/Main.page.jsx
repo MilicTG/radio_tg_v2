@@ -10,6 +10,7 @@ import ShowModal from "../components/ShowModal.component";
 import Shows from "../components/Shows.component";
 import StreamsSection from "../components/StreamsSection.component";
 import ContactSection from "../components/ContactSection.component";
+import DocumentSection from "../components/DocumentsSection.component";
 import AndroidApp from "../components/AndroidApp.component";
 import Footer from "../components/Footer.component";
 import BtnToTop from "../components/BtnToTop.component";
@@ -544,6 +545,7 @@ const Main = () => {
         order={false}
       />
       <ContactSection />
+      <DocumentSection />
       <AndroidApp />
       <Footer />
       <audio
