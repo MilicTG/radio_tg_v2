@@ -62,13 +62,13 @@ const NavMenu = ({ hidden, close }) => {
         <li className="cursor-pointer h-full p-3 hover:text-blue-400 transition-all">
           <Link
             activeClass="active"
-            to="docs"
+            to="live_cam"
             spy={true}
             smooth={true}
             duration={1000}
             onClick={close}
           >
-            Natječaji
+            Kamera uživo
           </Link>
         </li>
 
