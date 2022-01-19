@@ -104,6 +104,7 @@ const Main = () => {
     showTitle: "",
     showList: [],
   });
+
   const [forumShow, setForumShow] = useState({
     showTitle: "",
     showList: [],
