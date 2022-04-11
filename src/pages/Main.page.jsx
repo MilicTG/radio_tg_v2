@@ -51,6 +51,7 @@ import {
 } from "firebase/firestore/lite";
 
 import { firebaseApp } from "../firebase";
+import DocumentsSection from "../components/DocumentsSection.component";
 const db = getFirestore(firebaseApp);
 
 const Main = () => {
@@ -547,6 +548,7 @@ const Main = () => {
       />
       <ContactSection />
       <SectionLiveCamera />
+      <DocumentsSection />
       <AndroidApp />
       <Footer />
       <audio
