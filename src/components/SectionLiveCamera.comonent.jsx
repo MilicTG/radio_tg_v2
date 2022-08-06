@@ -14,7 +14,7 @@ const SectionLiveCamera = () => {
         <div className="w-full h-auto pb-28">
           <iframe
             className="w-full sm:h-72 md:h-80 lg:h-96 xl:h-screen 2xl:h-screen"
-            src="https://www.youtube.com/embed/re2IK4I-fss"
+            src="https://www.youtube.com/embed/-8hUipx_6X0"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
